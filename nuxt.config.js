@@ -27,13 +27,17 @@ export default {
   /*
   ** Global CSS
   */
-  css: ['./assets/css/main.css', 'element-ui/lib/theme-chalk/reset.css',
-    'element-ui/lib/theme-chalk/index.css'],
+  css: [
+    './assets/css/main.css',
+    'element-ui/lib/theme-chalk/reset.css',
+    'element-ui/lib/theme-chalk/index.css'
+  ],
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
     '~/plugins/vue2-filters',
+    '~/plugins/vuelidate',
     '~/plugins/element-ui',
     { src: '~/plugins/vuex-persist', ssr: false }
 

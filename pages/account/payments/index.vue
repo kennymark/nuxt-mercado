@@ -22,6 +22,7 @@
           class="bg-gray-800 rounded-md mt-10 p-3 border hover:shadow-xl text-gray-200 text-base tracking-wider mr-4 hover:bg-gray-900"
         >Edit payment</button>
         <button
+          @click="deletePayment"
           class="rounded-md mt-10 px-6 py-3 border hover:shadow-xl text-base tracking-wider text-gray-800"
         >Delete payment</button>
       </div>
@@ -98,7 +99,18 @@ export default {
   methods: {
     updateDetails() {},
     saveAddress() {},
-    deleteAddress() {}
+    deletePayment() {
+      this.$alert(
+        "Are you sure you want to delete this card?",
+        "Delete card?",
+        {
+          confirmButtonText: "Yes",
+          callback: action => {
+            console.log(action);
+          }
+        }
+      );
+    }
   }
 };
 </script>

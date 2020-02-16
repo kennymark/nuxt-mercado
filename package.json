@@ -23,6 +23,7 @@
     "vue-slick-carousel": "^1.0.2",
     "vue-stripe-menu": "^1.2.6",
     "vue2-filters": "^0.9.1",
+    "vuelidate": "^0.7.5",
     "vuex-persist": "^2.2.0"
   },
   "devDependencies": {

@@ -18,3 +18,7 @@ h1, h2, h3 {
 .container {
   min-height: 80vh !important;
 }
+
+.el-pager li {
+  font-size: 18px;
+}

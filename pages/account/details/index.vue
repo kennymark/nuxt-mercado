@@ -7,17 +7,17 @@
         <label class="text-left block text-gray-600 text-lg mb-2" for="grid-first-name">First Name</label>
         <input
           class="input focus:outline-none focus:bg-white focus:border-gray-500"
-          id="first-name"
+          id="first_name"
           type="text"
           placeholder="Jane"
         />
       </div>
 
       <div class="flex flex-wrap mb-4 mx-3">
-        <label class="text-left block text-gray-600 text-lg mb-2" for="last-name">Last Name</label>
+        <label class="text-left block text-gray-600 text-lg mb-2" for="last_name">Last Name</label>
         <input
           class="input focus:outline-none focus:bg-white focus:border-gray-500"
-          id="last-name"
+          id="last_name"
           type="text"
           placeholder="Doe"
         />
@@ -27,66 +27,27 @@
         <label class="text-left block text-gray-600 text-lg mb-2" for="email">Email</label>
         <input
           class="input focus:outline-none focus:bg-white focus:border-gray-500"
-          id="grid-password"
+          id="email"
           type="email"
           placeholder="example@example.com"
         />
       </div>
 
       <div class="flex flex-wrap mb-4 mx-3">
-        <label class="text-left block text-gray-600 text-lg mb-2" for="grid-password">Password</label>
+        <label class="text-left block text-gray-600 text-lg mb-2" for="phone">Phone no</label>
         <input
           class="input focus:outline-none focus:bg-white focus:border-gray-500"
-          id="grid-password"
-          type="password"
-          placeholder="******************"
+          id="phone"
+          type="phone"
+          placeholder="07985784280"
         />
       </div>
 
-      <div class="flex flex-wrap mb-2">
-        <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-          <label class="text-left block text-gray-600 text-lg mb-2" for="grid-city">City</label>
-          <input
-            class="input focus:outline-none focus:bg-white focus:border-gray-500"
-            id="grid-city"
-            type="text"
-            placeholder="Chester"
-          />
-        </div>
-        <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-          <label class="text-left block text-gray-600 text-lg mb-2" for="grid-state">County</label>
-          <div class="relative">
-            <select
-              class="input focus:outline-none focus:bg-white focus:border-gray-500"
-              id="grid-state"
-            >
-              <option>Chester</option>
-              <option>Manchester</option>
-              <option>Liverpool</option>
-            </select>
-            <div
-              class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700"
-            >
-              <svg
-                class="fill-current h-4 w-4"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
-                />
-              </svg>
-            </div>
-          </div>
-        </div>
-        <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-          <label class="text-left block text-gray-600 text-lg mb-2" for="grid-zip">Post Code</label>
-          <input
-            class="input focus:outline-none focus:bg-white focus:border-gray-500"
-            id="post-code"
-            type="text"
-            placeholder="90210"
-          />
+      <div class="flex flex-wrap mb-4 mx-3">
+        <label class="text-left block text-gray-600 text-lg mb-2" for="dob">Date of birth</label>
+
+        <div>
+          <el-date-picker v-model="dob" type="date" placeholder="Pick a day" />
         </div>
       </div>
 
@@ -105,11 +66,29 @@ export default {
   layout: "account",
   data() {
     return {
-      currentPage: 1
+      currentPage: 1,
+      form: {
+        first_name: "",
+        last_name: "",
+        email: "",
+        phone: "",
+        dob: ""
+      }
     };
   },
   methods: {
-    updateDetails() {}
+    updateDetails() {
+      this.$alert(
+        "Are you sure you want to update your details?",
+        "Update Details?",
+        {
+          confirmButtonText: "OK",
+          callback: action => {
+            console.log(action);
+          }
+        }
+      );
+    }
   }
 };
 </script>

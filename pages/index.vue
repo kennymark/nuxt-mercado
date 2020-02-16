@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="h-screen bg-gray-200 carousel mb-4"></div>
+    <div class="min-h-screen bg-gray-200 carousel mb-4"></div>
     <div class="container">
       <h1 class="text-bold uppercase text-2xl text-black">new</h1>
     </div>

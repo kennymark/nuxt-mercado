@@ -20,7 +20,7 @@
           <h3 class="text-black uppercase">Item count 1</h3>
 
           <div class="buttons mt-10">
-            <button class="btn">View Order</button>
+            <button class="btn" @click="viewOrder(key)">View Order</button>
             <button class="btn">Track Order</button>
             <button class="btn">Return item/s</button>
           </div>
@@ -56,6 +56,10 @@ export default {
     },
     handleCurrentChange(val) {
       console.log(`current page: ${val}`);
+    },
+    viewOrder(id) {
+      console.log(id);
+      this.$router.push(`orders/${id}`);
     }
   }
 };

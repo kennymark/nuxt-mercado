@@ -1,6 +1,11 @@
 <template>
   <headerSearch title="products">
-    <el-table :data="tableData" class="mt-10 shadow-lg rounded-lg border border-gray-200 w-full">
+    <el-table
+      :data="tableData"
+      highlight-current-row
+      @current-change="rowClicked"
+      class="mt-10 shadow-lg rounded-lg border border-gray-200 w-full"
+    >
       <el-table-column prop="date" label="Date"></el-table-column>
       <el-table-column prop="name" label="Name"></el-table-column>
       <el-table-column prop="address" label="Address"></el-table-column>
@@ -38,6 +43,11 @@ export default {
         }
       ]
     };
+  },
+  methods: {
+    rowClicked(val) {
+      console.log(val);
+    }
   }
 };
 </script>

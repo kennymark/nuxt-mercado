@@ -19,9 +19,11 @@
       </div>
       <div class="buttons">
         <button
+          @click="editAddress"
           class="bg-gray-800 rounded-md mt-10 p-3 border hover:shadow-xl text-gray-200 text-base tracking-wider mr-4 hover:bg-gray-900"
         >Edit address</button>
         <button
+          @click="deleteAddress"
           class="rounded-md mt-10 px-6 py-3 border hover:shadow-xl text-base tracking-wider text-gray-800"
         >Delete address</button>
       </div>
@@ -33,47 +35,53 @@
       class="p-6 bg-white shadow-md rounded-lg"
     >
       <div class="flex flex-wrap mb-3">
-        <label class="text-left block text-gray-600 text-lg mb-2" for="grid-city">Address Line 1</label>
+        <label
+          class="text-left block text-gray-600 text-lg mb-2"
+          for="address_line_1"
+        >Address Line 1</label>
         <input
           class="input focus:outline-none focus:bg-white focus:border-gray-500"
-          id="grid-city"
+          id="address_line_1"
           type="text"
           placeholder="No 10 Downing Street"
         />
       </div>
       <div class="flex flex-wrap mb-3">
-        <label class="text-left block text-gray-600 text-lg mb-2" for="grid-city">Address Line 2</label>
+        <label
+          class="text-left block text-gray-600 text-lg mb-2"
+          for="address_line_2"
+        >Address Line 2</label>
         <input
           class="input focus:outline-none focus:bg-white focus:border-gray-500"
-          id="grid-city"
+          id="address_line_2"
           type="text"
           placeholder="Chester"
         />
       </div>
       <div class="flex flex-wrap mb-3">
-        <label class="text-left block text-gray-600 text-lg mb-2" for="grid-city">City</label>
+        <label class="text-left block text-gray-600 text-lg mb-2" for="city">City</label>
         <input
           class="input focus:outline-none focus:bg-white focus:border-gray-500"
-          id="grid-city"
+          id="city"
           type="text"
           placeholder="Chester"
         />
       </div>
       <div class="flex flex-wrap mb-3">
-        <label class="text-left block text-gray-600 text-lg mb-2" for="grid-city">Country</label>
+        <label class="text-left block text-gray-600 text-lg mb-2" for="country">Country</label>
         <input
           class="input focus:outline-none focus:bg-white focus:border-gray-500"
-          id="grid-city"
+          id="country"
           type="text"
           placeholder="Chester"
         />
       </div>
 
       <div class="flex flex-wrap mb-3">
-        <label class="text-left block text-gray-600 text-lg mb-2" for="grid-city">Post Code</label>
+        <label class="text-left block text-gray-600 text-lg mb-2" for="post_code">Post Code</label>
         <input
           class="input focus:outline-none focus:bg-white focus:border-gray-500"
-          id="grid-city"
+          id="post_code"
           type="text"
           placeholder="Chester"
         />
@@ -81,6 +89,7 @@
 
       <div class="flex flex-wrap mb-2">
         <button
+          @click="saveAddress"
           class="bg-gray-800 rounded-md mt-10 p-3 border hover:shadow-xl text-gray-200 text-base tracking-wider mr-4 hover:bg-gray-900"
         >Save Address</button>
       </div>
@@ -100,8 +109,30 @@ export default {
   },
   methods: {
     updateDetails() {},
-    saveAddress() {},
-    deleteAddress() {}
+    saveAddress() {
+      this.$alert("Save new address", "Add address", {
+        confirmButtonText: "OK",
+        callback: action => {
+          this.$message({
+            type: "info",
+            message: `action: ${action}`
+          });
+        }
+      });
+    },
+    editAddress() {},
+    deleteAddress() {
+      this.$alert(
+        "Are you sure you want to delete this address?",
+        "Delete address?",
+        {
+          confirmButtonText: "OK",
+          callback: action => {
+            console.log(action);
+          }
+        }
+      );
+    }
   }
 };
 </script>

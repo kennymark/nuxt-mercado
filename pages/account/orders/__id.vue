@@ -1,10 +1,13 @@
 <template>
   <div class="container w-3/4 lg:w-3/4 sm:w-4/4">
-    <h1 class="title sm:mt-10">Account Overview</h1>
+    <h1 class="title sm:mt-10">Order</h1>
 
     <div class="bg-white p-3 rounded-lg shadow-md">
-      <h2 class="text-center text-3xl text-gray-700">Welcome to your account</h2>
-
+      <h1 class="text-xl">Cart</h1>
+      <div class="flex lg:flex-row sm:flex-col">
+        <div class="lg:w-3/4 sm:w-full h-30 border p-3 rounded-lg lg:mr-4"></div>
+        <div class="rounded-lg lg:w-1/4 sm:w-full h-30 border shadow-md p-3">Total price</div>
+      </div>
       <div class="flex flex-wrap mb-2 m-3">
         <button
           class="bg-gray-800 rounded-md mt-10 p-3 border hover:shadow-xl text-gray-200 text-base tracking-wider mr-4 hover:bg-gray-900"
