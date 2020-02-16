@@ -12,7 +12,6 @@ import Logo from "~/components/Logo.vue";
 
 export default {
   layout: "homepage",
-  middleware: "auth",
   components: {
     Logo
   }
