@@ -1,0 +1,110 @@
+<template>
+  <div class="container w-3/4 lg:w-3/4 sm:w-4/4">
+    <h1 class="title sm:mt-10 ml-3">Address</h1>
+    <button
+      class="rounded-md mb-4 p-3 bg-white border border-gray-200 hover:shadow-xl"
+      @click="addressForm = !addressForm"
+    >Add new address</button>
+
+    <div class="border rounded-lg h-auto p-6 mb-3 bg-white shadow-md">
+      <h2 class="text-2xl text-black">Default Address</h2>
+
+      <div class="text-lg text-gray-600">
+        <p>Doreen Dogbey</p>
+        <p>28 Cascade Road</p>
+        <p>Speke</p>
+        <p>Liverpool,Merseyside</p>
+        <p>L24 9LH,UK</p>
+        <p>07484680764</p>
+      </div>
+      <div class="buttons">
+        <button
+          class="bg-gray-800 rounded-md mt-10 p-3 border hover:shadow-xl text-gray-200 text-base tracking-wider mr-4 hover:bg-gray-900"
+        >Edit address</button>
+        <button
+          class="rounded-md mt-10 px-6 py-3 border hover:shadow-xl text-base tracking-wider text-gray-800"
+        >Delete address</button>
+      </div>
+    </div>
+
+    <form
+      @submit.prevent="updateDetails"
+      v-if="addressForm"
+      class="p-6 bg-white shadow-md rounded-lg"
+    >
+      <div class="flex flex-wrap mb-3">
+        <label class="text-left block text-gray-600 text-lg mb-2" for="grid-city">Address Line 1</label>
+        <input
+          class="input focus:outline-none focus:bg-white focus:border-gray-500"
+          id="grid-city"
+          type="text"
+          placeholder="No 10 Downing Street"
+        />
+      </div>
+      <div class="flex flex-wrap mb-3">
+        <label class="text-left block text-gray-600 text-lg mb-2" for="grid-city">Address Line 2</label>
+        <input
+          class="input focus:outline-none focus:bg-white focus:border-gray-500"
+          id="grid-city"
+          type="text"
+          placeholder="Chester"
+        />
+      </div>
+      <div class="flex flex-wrap mb-3">
+        <label class="text-left block text-gray-600 text-lg mb-2" for="grid-city">City</label>
+        <input
+          class="input focus:outline-none focus:bg-white focus:border-gray-500"
+          id="grid-city"
+          type="text"
+          placeholder="Chester"
+        />
+      </div>
+      <div class="flex flex-wrap mb-3">
+        <label class="text-left block text-gray-600 text-lg mb-2" for="grid-city">Country</label>
+        <input
+          class="input focus:outline-none focus:bg-white focus:border-gray-500"
+          id="grid-city"
+          type="text"
+          placeholder="Chester"
+        />
+      </div>
+
+      <div class="flex flex-wrap mb-3">
+        <label class="text-left block text-gray-600 text-lg mb-2" for="grid-city">Post Code</label>
+        <input
+          class="input focus:outline-none focus:bg-white focus:border-gray-500"
+          id="grid-city"
+          type="text"
+          placeholder="Chester"
+        />
+      </div>
+
+      <div class="flex flex-wrap mb-2">
+        <button
+          class="bg-gray-800 rounded-md mt-10 p-3 border hover:shadow-xl text-gray-200 text-base tracking-wider mr-4 hover:bg-gray-900"
+        >Save Address</button>
+      </div>
+    </form>
+  </div>
+</template>
+
+<script>
+export default {
+  middleware: "auth",
+  layout: "account",
+  data() {
+    return {
+      currentPage: 1,
+      addressForm: false
+    };
+  },
+  methods: {
+    updateDetails() {},
+    saveAddress() {},
+    deleteAddress() {}
+  }
+};
+</script>
+
+<style>
+</style>
