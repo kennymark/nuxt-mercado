@@ -3,8 +3,8 @@
     <Nav />
     <div class="sm:flex sm:flex-col lg:flex-row w-full">
       <div class="lg:w-1/6 sm:w-full md:w-full p-4 lg:min-h-screen sm:h-auto md:h-auto p-20">
-        <div class="rounded-lg text-gray-500 mt-1 text-base" v-for="item in items" :key="item.icon">
-          <a to="#" class="border-gray-500 cursor-pointer">{{item.title}}</a>
+        <div class="rounded-lg text-gray-800 mt-1 text-base" v-for="item in items" :key="item.icon">
+          <a to="#" class="cursor-pointer">{{item.title}}</a>
         </div>
       </div>
       <div class="lg:w-4/5 sm:w-full sm:p-3 lg:p-4 container">

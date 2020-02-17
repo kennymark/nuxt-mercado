@@ -19,7 +19,7 @@
         <nuxt-link
           :to="'/admin/'+item.route"
           class="border-gray-500 text-lg"
-          exact-active-class="text-gray-900"
+          exact-active-class="font-medium"
         >
           <i :class="item.icon" class="mr-3"></i>
           {{item.title}}

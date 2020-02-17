@@ -29,16 +29,15 @@ export default {
   */
   css: [
     './assets/css/main.css',
-    'element-ui/lib/theme-chalk/reset.css',
     'element-ui/lib/theme-chalk/index.css'
   ],
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '~/plugins/vue2-filters',
-    '~/plugins/vuelidate',
-    '~/plugins/element-ui',
+    { src: '~/plugins/vue2-filters', ssr: false },
+    { src: '~/plugins/vuelidate', ssr: false },
+    { src: '~/plugins/element-ui', ssr: false },
     { src: '~/plugins/vuex-persist', ssr: false }
 
   ],
@@ -55,7 +54,6 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
-    'nuxt-element-ui',
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     '@nuxtjs/dotenv',
@@ -70,7 +68,7 @@ export default {
   ** Build configuration
   */
   build: {
-    transpile: ['element-ui'],
+    // transpile: [''],
 
     extractCSS: true,
     /*
@@ -80,8 +78,8 @@ export default {
     }
   },
   router: {
-    // linkActiveClass: 'italic',
-    // linkExactActiveClass: 'italic'
+    // linkActiveClass: 'font-bold',
+    linkExactActiveClass: 'font-medium'
 
   }
 }

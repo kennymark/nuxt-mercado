@@ -1,7 +1,7 @@
 <template>
   <div class="sm:flex lg:flex-row sm:flex-col">
     <div class="w-2/3 mx-2 lg:mr-5">
-      <h1 class="text-2xl text-black font-bold mb-3 ml-2">Overview</h1>
+      <h1 class="text-2xl text-black font-bold mb-3 ml-2 mt-10">Overview</h1>
 
       <div class="sm:flex lg:flex-row sm:flex-col md:flex-col justify-between">
         <stat-card

@@ -1,6 +1,6 @@
 <template>
   <div class="sm:flex sm:flex-col lg:flex-row w-full">
-    <div class="xl:w-1/5 lg:w-1/4 sm:w-full border p-4 lg:min-h-screen sm:h-auto md:h-auto">
+    <div class="xl:w-1/5 lg:w-2/5 sm:w-full border p-4 lg:min-h-screen sm:h-auto md:h-auto">
       <div class="text-base mb-10 flex flex-row justify-between">
         <nuxt-link to="/" class="rounded">
           <!--  Back -->
@@ -19,7 +19,7 @@
         <nuxt-link
           :to="'/account/'+item.route"
           class="border-gray-500 text-lg"
-          exact-active-class="text-gray-900"
+          exact-active-class="font-medium"
         >
           <i :class="item.icon" class="mr-3"></i>
           {{item.title |capitalize}}

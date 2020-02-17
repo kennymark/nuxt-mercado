@@ -1,8 +1,8 @@
 <template>
   <div class="container">
     <!-- <h3 class="title">Products</h3> -->
-    <div class="flex py-3">
-      <p class="text-lg text-gray-600 mr-3">Sort</p>
+    <div class="flex items-end py-3 px-4">
+      <p class="text-lg text-gray-600 mr-5">Sort</p>
       <el-select v-model="sortValue" placeholder="Select">
         <el-option
           v-for="item in options"
@@ -12,11 +12,13 @@
         />
       </el-select>
     </div>
-    <div class="lg:grid sm:grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 lg:gap-4 sm:gap-2">
+    <div
+      class="lg:grid sm:grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 lg:gap-4 sm:gap-2 lg:py-5 p-4"
+    >
       <div
-        v-for="(item,key) in 100"
+        v-for="(item,key) in 48"
         :key="key"
-        class="bg-gray-200 cursor-pointer"
+        class="bg-gray-300 cursor-pointer mb-3"
         style="min-height:400px"
         @click="viewProduct(item)"
       ></div>
