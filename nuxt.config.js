@@ -69,8 +69,8 @@ export default {
   */
   build: {
     // transpile: [''],
-
-    extractCSS: true,
+    // was causing issues in prod
+    // extractCSS: true, 
     /*
     ** You can extend webpack config here
     */
