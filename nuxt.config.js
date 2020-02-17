@@ -13,11 +13,6 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      // {
-      //   rel: 'preload',
-      //   as: 'style',
-      //   href: ''
-      // }
     ]
   },
   /*
@@ -50,7 +45,6 @@ export default {
     }],
     '@nuxtjs/tailwindcss',
     '@nuxtjs/global-components',
-    '@nuxt/typescript-build'
   ],
   /*
   ** Nuxt.js modules
