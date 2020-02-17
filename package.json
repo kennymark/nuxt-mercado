@@ -5,19 +5,20 @@
   "author": "Kenny Mark",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
-    "build": "nuxt build",
-    "start": "nuxt start",
-    "generate": "nuxt generate",
+    "dev": "nuxt-ts",
+    "build": "nuxt-ts build",
+    "generate": "nuxt-ts generate",
+    "start": "nuxt-ts start",
     "test": "jest"
   },
   "dependencies": {
+    "@nuxt/typescript-runtime": "^0.3.9",
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/dotenv": "^1.4.0",
     "@nuxtjs/pwa": "^3.0.0-0",
+    "element-ui": "^2.13.0",
     "firebase": "^7.8.2",
     "nuxt": "^2.0.0",
-    "nuxt-element-ui": "^1.0.10",
     "tiptap": "^1.26.6",
     "vue-functional-calendar": "^2.7.7",
     "vue-slick-carousel": "^1.0.2",
@@ -27,6 +28,8 @@
     "vuex-persist": "^2.2.0"
   },
   "devDependencies": {
+    "@nuxt/typescript-build": "^0.5.7",
+    "@nuxtjs/global-components": "^0.6.1",
     "@nuxtjs/google-analytics": "^2.2.3",
     "@nuxtjs/tailwindcss": "^1.0.0",
     "@vue/test-utils": "^1.0.0-beta.27",

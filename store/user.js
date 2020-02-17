@@ -11,3 +11,8 @@ export const mutations = {
     state.user = payload
   }
 }
+
+// interface User {
+//   user: Object;
+//   authenticated: boolean;
+// }

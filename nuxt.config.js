@@ -49,6 +49,8 @@ export default {
       id: 'UA-68267074-3'
     }],
     '@nuxtjs/tailwindcss',
+    '@nuxtjs/global-components',
+    '@nuxt/typescript-build'
   ],
   /*
   ** Nuxt.js modules
@@ -76,6 +78,13 @@ export default {
     */
     extend(config, ctx) {
     }
+  },
+  generate: {
+    fallback: true,
+    devtools: true,
+    routes: [
+
+    ]
   },
   router: {
     // linkActiveClass: 'font-bold',

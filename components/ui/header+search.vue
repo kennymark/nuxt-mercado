@@ -2,7 +2,7 @@
   <div class="container mt-6">
     <h1 class="title">{{title |capitalize}}</h1>
     <input
-      class="input focus:outline-none focus:bg-white focus:border-gray-400"
+      class="input bg-white focus:outline-none focus:bg-white focus:border-gray-400"
       :id="title+'-search'"
       type="text"
       @keyup="input"

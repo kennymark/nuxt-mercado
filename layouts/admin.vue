@@ -26,7 +26,7 @@
         </nuxt-link>
       </div>
     </div>
-    <div class="lg:w-4/5 sm:w-full sm:p-3 lg:p-4 container">
+    <div class="w-full sm:p-3 lg:p-4">
       <nuxt />
     </div>
   </div>

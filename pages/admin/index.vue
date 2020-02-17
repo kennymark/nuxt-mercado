@@ -22,7 +22,7 @@
     </div>
 
     <div
-      class="lg:w-1/3 sm:w-full sm:mt-5 p-6 overflow-y-scroll rounded-lg bg-gray-200"
+      class="lg:w-1/3 sm:w-full sm:mt-5 p-6 overflow-y-scroll rounded-lg bg-gray-300"
       style="max-height:900px"
     >
       <h1 class="text-2xl text-black mb-3">Activity</h1>
