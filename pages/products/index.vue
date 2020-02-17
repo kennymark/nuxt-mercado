@@ -2,7 +2,7 @@
   <div class="container">
     <!-- <h3 class="title">Products</h3> -->
     <div class="flex py-3">
-      <p class="text-xl text-gray-700 mr-3">Sort</p>
+      <p class="text-lg text-gray-600 mr-3">Sort</p>
       <el-select v-model="sortValue" placeholder="Select">
         <el-option
           v-for="item in options"
@@ -16,7 +16,8 @@
       <div
         v-for="(item,key) in 100"
         :key="key"
-        class="h-64 bg-gray-800 border py-32 cursor-pointer"
+        class="bg-gray-200 cursor-pointer"
+        style="min-height:400px"
         @click="viewProduct(item)"
       ></div>
     </div>

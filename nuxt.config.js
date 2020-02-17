@@ -70,6 +70,8 @@ export default {
   ** Build configuration
   */
   build: {
+    transpile: ['element-ui'],
+
     extractCSS: true,
     /*
     ** You can extend webpack config here
