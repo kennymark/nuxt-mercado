@@ -1,7 +1,13 @@
 <template>
   <nav class="xl:flex sm:flex lg:flex-row sm:flex-col p-6 justify-between text-lg tracking-tight">
-    <button class="btn lg:hidden" @click="isOpen = !isOpen">Menu</button>
-    <div class="left flex flex-col lg:flex-row">
+    <button
+      class="btn lg:hidden w-32 mb-5 flex items-center justify-center hover:shadow-lg focus:outline-none"
+      @click="hideMenu"
+    >
+      <i class="el-icon-menu mr-2 align-bottom text-2xl text-gray-700" /> Menu
+    </button>
+
+    <div class="left lg:flex sm:flex sm:flex-col lg:flex-row" :class="{'sm:hidden': menuOpen}">
       <nuxt-link to="/" class="link hover:text-gray-600">Home</nuxt-link>
 
       <nuxt-link to="/products" class="link hover:text-gray-600">Products</nuxt-link>
@@ -9,7 +15,7 @@
       <nuxt-link to="/admin" class="link hover:text-gray-600">Admin</nuxt-link>
     </div>
 
-    <div class="right">
+    <div class="right lg:flex sm:flex sm:flex-col lg:flex-row" :class="{'sm:hidden': menuOpen}">
       <nuxt-link to="/login" class="link hover:text-gray-600" v-if="!$store.state.user">Login</nuxt-link>
 
       <nuxt-link to="/signup" class="link hover:text-gray-600" v-if="!$store.state.user">Signup</nuxt-link>
@@ -47,10 +53,14 @@ export default {
     return {
       drawer: false,
       direction: "rtl",
-      isOpen: false
+      isOpen: false,
+      menuOpen: false
     };
   },
   methods: {
+    hideMenu() {
+      this.menuOpen = !this.menuOpen;
+    },
     openCart() {
       console.log("open carting");
       this.drawer = !this.drawer;

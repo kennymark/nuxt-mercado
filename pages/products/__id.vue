@@ -2,7 +2,7 @@
   <div class="container">
     <div class="lg:grid sm:grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-2 lg:gap-12">
       <div class="bg-gray-300 h-64" style="min-height:500px"></div>
-      <div class="flex flex-col p-2 mx-auto">
+      <div class="flex flex-col p-3 mx-auto">
         <h1 class="text-3xl uppercase text-black">Amazon product 83</h1>
         <div class="text-xl text-gray-700">Price {{849 | currency()}}</div>
 
@@ -18,7 +18,7 @@
           </el-select>
         </div>
 
-        <div class="flex lg:flex-row sm:flex-col buttons mt-10 text-lg">
+        <div class="lg:flex lg:flex-row sm:flex-col buttons mt-10 text-lg">
           <button class="btn mr-3 hover:bg-gray-800 hover:text-gray-200 hover:shadow-xl">Add to Cart</button>
           <button class="btn mr-3 hover:bg-green-500 hover:text-gray-200 hover:shadow-xl">Buy now</button>
           <button
@@ -30,12 +30,10 @@
       </div>
     </div>
 
-    <div class="flex flex-col lg:my-20 sm:my-10">
+    <div class="flex flex-col lg:my-20 sm:my-10 p-3">
       <h1 class="text-2xl text-black uppercase">Related products</h1>
 
-      <div
-        class="lg:grid sm:grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 lg:gap-4 sm:gap-2 lg:py-5 p-4"
-      >
+      <div class="lg:grid sm:grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 lg:gap-4 sm:gap-2">
         <product-card v-for="(item,key) in 5" :key="key" />
       </div>
     </div>
