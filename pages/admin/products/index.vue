@@ -1,5 +1,10 @@
 <template>
   <headerSearch title="products">
+    <button
+      class="btn focus:outline-none hover:shadow-lg"
+      slot="button"
+      @click="createNewProduct"
+    >Create product</button>
     <el-table
       :data="tableData"
       highlight-current-row
@@ -47,6 +52,10 @@ export default {
   methods: {
     rowClicked(val) {
       console.log(val);
+      this.$router.push(`products/edit-product/${val.name}`);
+    },
+    createNewProduct() {
+      this.$router.push("products/add-product");
     }
   }
 };

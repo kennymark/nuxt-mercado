@@ -47,7 +47,7 @@
         <label class="text-left block text-gray-600 text-lg mb-2" for="dob">Date of birth</label>
 
         <div>
-          <el-date-picker v-model="dob" type="date" placeholder="Pick a day" />
+          <el-date-picker v-model="form.dob" type="date" placeholder="Pick a day" />
         </div>
       </div>
 

@@ -28,59 +28,48 @@
       </div>
     </div>
 
-    <form @submit.prevent="updateDetails" v-if="addressForm">
-      <div class="flex flex-wrap mb-3">
-        <label class="text-left block text-gray-600 text-lg mb-2" for="grid-city">Address Line 1</label>
-        <input
-          class="input focus:outline-none focus:bg-white focus:border-gray-500"
-          id="grid-city"
-          type="text"
-          placeholder="No 10 Downing Street"
-        />
-      </div>
-      <div class="flex flex-wrap mb-3">
-        <label class="text-left block text-gray-600 text-lg mb-2" for="grid-city">Address Line 2</label>
-        <input
-          class="input focus:outline-none focus:bg-white focus:border-gray-500"
-          id="grid-city"
-          type="text"
-          placeholder="Chester"
-        />
-      </div>
-      <div class="flex flex-wrap mb-3">
-        <label class="text-left block text-gray-600 text-lg mb-2" for="grid-city">City</label>
-        <input
-          class="input focus:outline-none focus:bg-white focus:border-gray-500"
-          id="grid-city"
-          type="text"
-          placeholder="Chester"
-        />
-      </div>
-      <div class="flex flex-wrap mb-3">
-        <label class="text-left block text-gray-600 text-lg mb-2" for="grid-city">Country</label>
-        <input
-          class="input focus:outline-none focus:bg-white focus:border-gray-500"
-          id="grid-city"
-          type="text"
-          placeholder="Chester"
-        />
-      </div>
-
-      <div class="flex flex-wrap mb-3">
-        <label class="text-left block text-gray-600 text-lg mb-2" for="grid-city">Post Code</label>
-        <input
-          class="input focus:outline-none focus:bg-white focus:border-gray-500"
-          id="grid-city"
-          type="text"
-          placeholder="Chester"
-        />
+    <form
+      @submit.prevent="updateDetails"
+      v-if="addressForm"
+      class="bg-white p-3 shadow-xl rounded-lg"
+    >
+      <div
+        class="lg:grid sm:grid lg:grid-cols-3 sm:grid-cols-1 sm:grid-cols-2 lg:gap-4 sm:gap-2 mt-4"
+      >
+        <div class="flex flex-wrap mb-3">
+          <label class="text-left block text-gray-600 text-lg mb-2" for="grid-city">Card Number</label>
+          <input
+            class="input focus:outline-none focus:bg-white focus:border-gray-500"
+            id="card_no"
+            type="text"
+            placeholder="424242424242"
+          />
+        </div>
+        <div class="flex flex-wrap mb-3">
+          <label class="text-left block text-gray-600 text-lg mb-2" for="grid-city">Expiration Date</label>
+          <input
+            class="input focus:outline-none focus:bg-white focus:border-gray-500"
+            id="exp-date"
+            type="text"
+            placeholder="Chester"
+          />
+        </div>
+        <div class="flex flex-wrap mb-3">
+          <label class="text-left block text-gray-600 text-lg mb-2" for="grid-city">City</label>
+          <input
+            class="input focus:outline-none focus:bg-white focus:border-gray-500"
+            id="grid-city"
+            type="text"
+            placeholder="Chester"
+          />
+        </div>
       </div>
 
       <div class="flex flex-wrap mb-2">
         <button
-          class="bg-black hover:bg-gray-700 hover:shadow-md text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-          type="submit"
-        >Save Address</button>
+          @click="savePayment"
+          class="bg-gray-800 rounded-md mt-10 p-3 border hover:shadow-xl text-gray-200 text-base tracking-wider mr-4 hover:bg-gray-900"
+        >Save Card</button>
       </div>
     </form>
   </div>
@@ -98,7 +87,7 @@ export default {
   },
   methods: {
     updateDetails() {},
-    saveAddress() {},
+    savePayment() {},
     deletePayment() {
       this.$alert(
         "Are you sure you want to delete this card?",

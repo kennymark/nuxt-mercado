@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <h1>add Product</h1>
+  <div class="container mt-6">
+    <h1 class="title">Create a new product</h1>
   </div>
 </template>
 

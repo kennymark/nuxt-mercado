@@ -18,7 +18,7 @@
           </el-select>
         </div>
 
-        <div class="lg:flex lg:flex-row sm:flex-col buttons mt-10 text-lg">
+        <div class="lg:flex lg:flex-row sm:flex-col buttons mt-10 text-lg justify-round">
           <button class="btn mr-3 hover:bg-gray-800 hover:text-gray-200 hover:shadow-xl">Add to Cart</button>
           <button class="btn mr-3 hover:bg-green-500 hover:text-gray-200 hover:shadow-xl">Buy now</button>
           <button

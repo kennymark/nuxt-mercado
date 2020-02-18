@@ -1,6 +1,12 @@
 <template>
   <div>
-    <div class="bg-gray-200 carousel mb-4" style="min-height:600px"></div>
+    <div class="bg-gray-600 carousel mb-4" style="min-height:600px">
+      <el-carousel height="600px" :autoplay="true">
+        <el-carousel-item v-for="item in 4" :key="item">
+          <h3 class="text-4xl font-bold text-center">{{ item }}</h3>
+        </el-carousel-item>
+      </el-carousel>
+    </div>
     <div class="container p-3">
       <h1 class="text-bold uppercase text-2xl text-black">new</h1>
 

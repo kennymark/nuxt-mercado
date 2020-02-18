@@ -1,6 +1,9 @@
 <template>
   <div class="container mt-6">
-    <h1 class="title">{{title |capitalize}}</h1>
+    <div class="flex justify-between items-start">
+      <h1 class="title">{{title |capitalize}}</h1>
+      <slot name="button" />
+    </div>
     <input
       class="input bg-white focus:outline-none focus:bg-white focus:border-gray-400"
       :id="title+'-search'"

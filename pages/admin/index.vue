@@ -3,7 +3,7 @@
     <div class="lg:w-2/3 mx-2 sm:w-full mx-auto xs:w-full">
       <h1 class="text-2xl text-black font-bold mb-3 mt-10">Overview</h1>
 
-      <div class="lg:grid sm:grid lg:grid-cols-3 sm:grid-row-2 lg:gap-4 sm:gap-2 lg:py-2 p-2">
+      <div class="grid xl:grid-cols-3 lg:grid-row-2 sm:grid-row-2 lg:gap-4 sm:gap-2 lg:py-2 p-2">
         <stat-card
           :data="{title:'Sales', description:'Earnings Monthly', text:20999}"
           class="card sm:mb-3"

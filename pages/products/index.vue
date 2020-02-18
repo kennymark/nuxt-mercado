@@ -1,6 +1,5 @@
 <template>
   <div class="container">
-    <!-- <h3 class="title">Products</h3> -->
     <div class="flex items-end py-3 px-4">
       <p class="mr-5">Sort product by</p>
       <el-select v-model="sortValue" placeholder="Select" class="focus:border-gray-200">

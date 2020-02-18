@@ -1,6 +1,7 @@
 <template>
   <div>
     <Nav />
+    <CategoriesNav />
     <div class="sm:flex sm:flex-col lg:flex-row w-full">
       <div class="lg:w-1/6 sm:w-full md:w-full p-4 lg:min-h-screen sm:h-auto md:h-auto p-20">
         <div class="rounded-lg text-gray-800 mt-1 text-base" v-for="item in items" :key="item.icon">
