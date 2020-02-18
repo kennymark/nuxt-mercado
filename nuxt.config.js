@@ -53,7 +53,14 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     '@nuxtjs/dotenv',
+    'nuxt-webfontloader',
   ],
+
+  webfontloader: {
+    google: {
+      families: ['Rubik:400,500,700&display=swap'] //Loads Lato font with weights 400 and 700
+    }
+  },
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options

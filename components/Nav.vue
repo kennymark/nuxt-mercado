@@ -26,6 +26,11 @@
         <i class="el-icon-shopping-bag-1 font-medium"></i>
       </a>
     </div>
+    <el-drawer :visible.sync="drawer" :direction="direction">
+      <div class="container">
+        <h1 class="text-2xl font-bold text-center">Your Cart</h1>
+      </div>
+    </el-drawer>
   </nav>
 </template>
 
