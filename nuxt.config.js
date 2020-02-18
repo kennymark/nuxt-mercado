@@ -77,9 +77,7 @@ export default {
   ** Build configuration
   */
   build: {
-    extractCSS: {
-      allChunks: true
-    },
+    extractCSS: true,
     /*
     ** You can extend webpack config here
     */
