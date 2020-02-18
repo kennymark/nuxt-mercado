@@ -24,6 +24,7 @@ export default {
   */
   css: [
     './assets/css/main.css',
+    'element-ui/lib/theme-chalk/index.css'
   ],
   /*
   ** Plugins to load before mounting the App
@@ -31,7 +32,7 @@ export default {
   plugins: [
     { src: '~/plugins/vue2-filters', ssr: false },
     { src: '~/plugins/vuelidate', ssr: false },
-    { src: '~/plugins/element-ui', ssr: false },
+    // { src: '~/plugins/element-ui', ssr: false },
     { src: '~/plugins/vuex-persist', ssr: false }
 
   ],
@@ -53,8 +54,15 @@ export default {
     '@nuxtjs/pwa',
     '@nuxtjs/dotenv',
     'nuxt-webfontloader',
+    'nuxt-element-ui'
   ],
 
+  elementUI: {
+    // components: [
+    //   'Drawer', 'DatePicker', 'Icon', 'Select', 'Option', 'Input', 'Alert', 'Steps', 'Step', ' Notification',
+    // ],
+    locale: 'en',
+  },
   webfontloader: {
     google: {
       families: ['Rubik:400,500,700&display=swap']
@@ -70,8 +78,6 @@ export default {
   ** Build configuration
   */
   build: {
-    // transpile: [''],
-    // was causing issues in prod
     // extractCSS: true, 
     /*
     ** You can extend webpack config here
@@ -87,8 +93,6 @@ export default {
     ]
   },
   router: {
-    // linkActiveClass: 'font-bold',
     linkExactActiveClass: 'font-medium'
-
   }
 }
