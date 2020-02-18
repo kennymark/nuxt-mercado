@@ -26,9 +26,15 @@
         <i class="el-icon-shopping-bag-1 font-medium"></i>
       </a>
     </div>
-    <el-drawer :visible.sync="drawer" :direction="direction">
+    <el-drawer :visible.sync="drawer" :direction="direction" :with-header="false" size="35%">
       <div class="container">
-        <h1 class="text-2xl font-bold text-center">Your Cart</h1>
+        <div class="flex px-6 align-center justify-between">
+          <h1 class="text-3xl font-bold text-center mt-3 text-center">Your Cart</h1>
+          <i
+            class="el-icon-close text-4xl self-end justify-end cursor-pointer"
+            @click="handleClose"
+          ></i>
+        </div>
       </div>
     </el-drawer>
   </nav>
@@ -50,7 +56,7 @@ export default {
       this.drawer = !this.drawer;
     },
     handleClose(done) {
-      console.log(done);
+      this.drawer = !this.drawer;
     }
   }
 };

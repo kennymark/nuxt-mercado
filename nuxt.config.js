@@ -32,7 +32,6 @@ export default {
   plugins: [
     { src: '~/plugins/vue2-filters', ssr: false },
     { src: '~/plugins/vuelidate', ssr: false },
-    // { src: '~/plugins/element-ui', ssr: false },
     { src: '~/plugins/vuex-persist', ssr: false }
 
   ],

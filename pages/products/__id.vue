@@ -33,8 +33,10 @@
     <div class="flex flex-col lg:my-20 sm:my-10">
       <h1 class="text-2xl text-black uppercase">Related products</h1>
 
-      <div class="products sm:flex lg:flex sm:flex-col lg:flex-row mt-5">
-        <div v-for="(item,key) in 5" :key="key" class="bg-gray-300 h-64 p-20 flex-1 lg:mr-3"></div>
+      <div
+        class="lg:grid sm:grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 lg:gap-4 sm:gap-2 lg:py-5 p-4"
+      >
+        <product-card v-for="(item,key) in 5" :key="key" />
       </div>
     </div>
   </div>
