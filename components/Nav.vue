@@ -15,11 +15,11 @@
       <nuxt-link to="/signup" class="link hover:text-gray-600" v-if="!$store.state.user">Signup</nuxt-link>
 
       <nuxt-link to="/account" class="link hover:text-gray-600">
-        <i class="el-icon-user font-bold"></i>
+        <i class="el-icon-user font-bold text-lg"></i>
       </nuxt-link>
 
       <p class="link hover:text-gray-600 cursor-pointer" @click="openCart">
-        <i class="el-icon-search font-bold"></i>
+        <i class="el-icon-search font-bold text-lg"></i>
       </p>
 
       <a class="link hover:text-gray-600 cursor-pointer font-bold" @click="openCart">

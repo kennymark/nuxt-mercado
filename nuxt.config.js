@@ -24,7 +24,6 @@ export default {
   */
   css: [
     './assets/css/main.css',
-    'element-ui/lib/theme-chalk/index.css'
   ],
   /*
   ** Plugins to load before mounting the App
@@ -58,7 +57,7 @@ export default {
 
   webfontloader: {
     google: {
-      families: ['Rubik:400,500,700&display=swap'] //Loads Lato font with weights 400 and 700
+      families: ['Rubik:400,500,700&display=swap']
     }
   },
   /*

@@ -2,8 +2,8 @@
   <div class="container">
     <!-- <h3 class="title">Products</h3> -->
     <div class="flex items-end py-3 px-4">
-      <p class="text-lg text-gray-600 mr-5">Sort</p>
-      <el-select v-model="sortValue" placeholder="Select">
+      <p class="mr-5">Sort product by</p>
+      <el-select v-model="sortValue" placeholder="Select" class="focus:border-gray-200">
         <el-option
           v-for="item in options"
           :key="item.value"
