@@ -18,7 +18,15 @@
 }
 
 .btn {
-  @apply btn border px-4 py-2 rounded-md cursor-pointer appearance-none outline-none
+  @apply btn border px-4 py-2 rounded-md cursor-pointer appearance-none
+}
+
+.btn:focus {
+  @apply outline-none
+}
+
+.btn:hover {
+  @apply shadow-lg
 }
 
 .card {

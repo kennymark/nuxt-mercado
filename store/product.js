@@ -6,6 +6,7 @@ export const state = () => ({
   currentProduct: null,
   adminCurrentProduct: null,
   buyNowProduct: null,
+  cartOpen: false,
 })
 
 
@@ -32,6 +33,10 @@ export const mutations = {
 
   incrementQuantity(state, product) {
     this.commit('addToCart', product)
+  },
+
+  openCart(state, payload) {
+    state.cartOpen = payload
   },
 
   decrementQuantity(state, product) {
