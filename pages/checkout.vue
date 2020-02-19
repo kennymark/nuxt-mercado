@@ -3,10 +3,10 @@
     <h1 class="title">Checkout</h1>
 
     <div class="flex sm:flex-col lg:flex-row">
-      <div class="h-64 bg-gray-100 w-2/3 p-3 rounded-lg"></div>
+      <div class="h-64 bg-gray-200 w-2/3 p-3 rounded-lg"></div>
       <div class="rounded-lg border w-1/3 p-3 ml-6 flex flex-col">
         <h2 class="title text-center">Your Order</h2>
-        <div class="products h-20 border rounded-lg mb-2 bg-gray-200" v-for="item in 4" :key="item"></div>
+        <div class="products h-20 border rounded-lg mb-2 bg-gray-100" v-for="item in 4" :key="item"></div>
         <h2 class="title mt-3">Total £736</h2>
       </div>
     </div>
