@@ -13,6 +13,7 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'script', src: 'https://js.stripe.com/v3/' }
     ]
   },
   /*
@@ -30,8 +31,8 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    { src: '~/plugins/vue2-filters', ssr: false },
-    { src: '~/plugins/vuelidate', ssr: false },
+    '~/plugins/vue2-filters',
+    '~/plugins/vuelidate',
     { src: '~/plugins/vuex-persist', ssr: false }
 
   ],
@@ -49,6 +50,7 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
+    'nuxt-buefy',
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     '@nuxtjs/dotenv',

@@ -1,15 +1,15 @@
 <template>
-  <transition name="slide-in">
+  <transition enter-active-class="slide-in" leave-active-class="slide-out">
     <div
       v-if="$store.state.product.cartOpen"
       class="overlay fixed top-0 min-h-screen min-w-full flex z-40"
       @click="handleClose"
     >
-      <div class="bg-white cart-sidebar p-3 shadow-lg lg:w-2/6 sm:w-full" @click.stop>
-        <div class="lg:flex sm:flex justify-between px-3 items-center sm:flex-col">
+      <div class="bg-white overflow-scroll p-3 shadow-lg lg:w-2/6 sm:w-full" @click.stop>
+        <div class="lg:flex sm:flex justify-between px-3 items-center lg:flex-row sm:flex-col">
           <h1 class="text-4xl">Shopping Cart</h1>
           <div class="buttons">
-            <button class="shadow-sm btn" @click="checkout">Checkout</button>
+            <button class="shadow-sm mr-3 btn" @click="checkout">Checkout</button>
             <button class="shadow-sm btn" @click="handleClose">Close X</button>
           </div>
         </div>
@@ -29,7 +29,6 @@
 
 <script>
 export default {
-  props: ["show"],
   methods: {
     handleClose() {
       this.$store.commit("product/openCart", false);
@@ -49,7 +48,31 @@ export default {
   overflow-y: scroll;
 }
 .overlay {
-  background: #00000057;
+  background: #0000006e;
   overflow-y: scroll;
+}
+
+.slide-in {
+  animation: slide-in 0.5s forwards;
+  -webkit-animation: slide-in 0.5s forwards;
+}
+
+.slide-out {
+  animation: slide-out 0.5s forwards;
+  -webkit-animation: slide-out 0.5s forwards;
+}
+
+@keyframes slide-in {
+  100% {
+    transform: translateX(0%);
+  }
+}
+@keyframes slide-out {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 </style>
