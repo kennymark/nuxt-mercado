@@ -8,7 +8,7 @@
           <a to="#" class="cursor-pointer">{{item.title}}</a>
         </div>
       </div>
-      <div class="lg:w-4/5 sm:w-full sm:p-3 lg:p-4 container">
+      <div class="lg:w-4/5 sm:w-full sm:p-3 lg:p-4">
         <nuxt />
       </div>
     </div>
@@ -27,15 +27,7 @@ export default {
       items: [
         { title: "Men", icon: "el-icon-s-data", route: "" },
         { title: "Women", icon: "el-icon-folder-add", route: "products" },
-        { title: "Children", icon: "el-icon-s-grid", route: "categories" },
-
-        { title: "Customers", icon: "el-icon-s-custom", route: "customers" },
-        { title: "Orders", icon: "el-icon-sold-out", route: "orders" },
-        {
-          title: "Configuration",
-          icon: "el-icon-s-tools",
-          route: "config"
-        }
+        { title: "Children", icon: "el-icon-s-grid", route: "categories" }
       ]
     };
   }
