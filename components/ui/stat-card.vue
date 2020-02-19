@@ -1,7 +1,7 @@
 <template>
-  <div class="p-3 rounded-lg bg-white w-full">
+  <div class="p-3 rounded-lg bg-white w-full card mb-3 sm:mb-5">
     <p class="text-xl text-gray-800">{{data.title}}</p>
-    <p class="text-sm text-gray-600">{{data.description}}</p>
+    <p class="text-sm text-gray-600" v-if="data.description">{{data.description}}</p>
     <h3 class="text-black text-3xl font-medium text-gray-700">{{data.text | currency('£')}}</h3>
     <slot />
   </div>

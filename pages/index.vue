@@ -1,17 +1,11 @@
 <template>
   <div>
-    <div class="bg-gray-600 carousel mb-4">
-      <!-- <el-carousel height="600px" :autoplay="true">
-        <el-carousel-item v-for="item in 4" :key="item">
-          <h3 class="text-4xl font-bold text-center">{{ item }}</h3>
+    <div class="carousel mb-4">
+      <el-carousel height="600px" :autoplay="true">
+        <el-carousel-item v-for="item in carousels" :key="item" :class="`bg-${item.color}-500`">
+          <h3 class="text-4xl font-bold text-center">{{ item.text }}</h3>
         </el-carousel-item>
-      </el-carousel>-->
-
-      <b-carousel>
-        <b-carousel-item v-for="(carousel, i) in carousels" :key="i">
-          <section :class="`hero is-medium is-${carousel.color}`" style="min-height:600px"></section>
-        </b-carousel-item>
-      </b-carousel>
+      </el-carousel>
     </div>
 
     <div class="container p-3">
@@ -42,11 +36,11 @@ export default {
   data() {
     return {
       carousels: [
-        { text: "Slide 1", color: "primary" },
-        { text: "Slide 2", color: "info" },
-        { text: "Slide 3", color: "success" },
-        { text: "Slide 4", color: "warning" },
-        { text: "Slide 5", color: "danger" }
+        { text: "Slide 1", color: "indigo" },
+        { text: "Slide 2", color: "red" },
+        { text: "Slide 3", color: "blue" },
+        { text: "Slide 4", color: "yellow" },
+        { text: "Slide 5", color: "gray" }
       ]
     };
   }

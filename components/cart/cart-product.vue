@@ -1,7 +1,11 @@
-<template></template>
+<template>
+  <div class="border shadow-md"></div>
+</template>
 
 <script>
-export default {};
+export default {
+  props: ["product", "height"]
+};
 </script>
 
 <style>

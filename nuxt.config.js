@@ -50,7 +50,6 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
-    'nuxt-buefy',
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     '@nuxtjs/dotenv',

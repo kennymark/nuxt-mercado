@@ -13,10 +13,11 @@
             <button class="shadow-sm btn" @click="handleClose">Close X</button>
           </div>
         </div>
-        <!-- 
+
         <div v-for="(product, key) in cart" :key="key" class="border-bottom bg-white px-4 py-2">
           <cart-product :length="cart.length" :product="product" />
         </div>
+        <!-- 
         <img v-if="!cart.length" :src="emptyCart" alt class="mt-5" />
         <h5
           v-if="!cart.length"
@@ -29,6 +30,11 @@
 
 <script>
 export default {
+  data() {
+    return {
+      cart: []
+    };
+  },
   methods: {
     handleClose() {
       this.$store.commit("product/openCart", false);
