@@ -14,15 +14,11 @@
       </div>
 
       <div
-        class="rounded-lg p-3 hover:bg-white mt-4 hover:shadow-2xl border-red-500 hover:border-gray-500"
+        class="rounded-lg p-3 hover:bg-white mt-4 hover:shadow-2xl hover:border-gray-300 border-white"
         v-for="item in items"
         :key="item.icon"
       >
-        <nuxt-link
-          :to="'/admin/'+item.route"
-          class="border-gray-500 text-lg"
-          exact-active-class="font-medium"
-        >
+        <nuxt-link :to="'/admin/'+item.route" class="border-gray-500 text-lg">
           <i :class="item.icon" class="mr-3"></i>
           {{item.title}}
         </nuxt-link>

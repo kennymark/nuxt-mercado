@@ -7,7 +7,10 @@
       <div class="rounded-lg border w-1/3 p-3 ml-6 flex flex-col">
         <h2 class="title text-center">Your Order</h2>
         <div class="products h-20 border rounded-lg mb-2 bg-gray-100" v-for="item in 4" :key="item"></div>
-        <h2 class="title mt-3">Total £736</h2>
+        <h2 class="font-medium mt-3 text-xl">
+          Total
+          <span class="font-thin">£736</span>
+        </h2>
       </div>
     </div>
   </div>

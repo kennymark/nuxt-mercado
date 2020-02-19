@@ -6,7 +6,7 @@
       :key="key"
       class="p-4 mx-auto border border-gray-200 mb-3 rounded-lg shadow-md lg:flex sm: sm:flex-col lg:flex-col bg-white"
     >
-      <h1 class="text-xl mb-4 text-gray-600 font-bold">Delivered</h1>
+      <h1 class="text-xl mb-4 text-gray-600 font-medium">Delivered</h1>
       <div class="flex flex-row justify-between">
         <img
           src="https://picsum.photos/seed/200/300"
@@ -15,11 +15,11 @@
         />
 
         <div class="description lg:flex-col sm:flex-row items-center">
-          <h3 class="text-black uppercase font-bold">Order no</h3>
-          <h3 class="text-black uppercase">Shipped on</h3>
-          <h3 class="text-black uppercase">Item count 1</h3>
+          <h3 class="text-black uppercase font-medium text-gray-800">Order no</h3>
+          <h3 class="text-black text-gray-700">Shipped on</h3>
+          <h3 class="text-black text-gray-700">Item count 1</h3>
 
-          <div class="buttons mt-10">
+          <div class="buttons mt-10 text-gray-700 sm:flex-col">
             <button class="btn" @click="viewOrder(key)">View Order</button>
             <button class="btn">Track Order</button>
             <button class="btn">Return item/s</button>

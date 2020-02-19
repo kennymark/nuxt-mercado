@@ -6,7 +6,7 @@
       <div class="flex flex-wrap mb-4 mx-3">
         <label class="text-left block text-gray-600 text-lg mb-2" for="password">Password</label>
         <input
-          class="input focus:outline-none focus:bg-white focus:border-gray-500"
+          class="input"
           id="password"
           type="password"
           placeholder="******************"
@@ -15,9 +15,9 @@
       </div>
 
       <div class="flex flex-wrap mb-4 mx-3">
-        <label class="text-left block text-gray-600 text-lg mb-2" for="new-password">New Password</label>
+        <label class="label" for="new-password">New Password</label>
         <input
-          class="input focus:outline-none focus:bg-white focus:border-gray-500"
+          class="input"
           id="new-password"
           type="password"
           placeholder="******************"
@@ -26,9 +26,7 @@
       </div>
 
       <div class="flex flex-wrap mb-2 m-3">
-        <button
-          class="bg-gray-800 rounded-md mt-10 p-3 border hover:shadow-xl text-gray-200 text-base tracking-wider mr-4 hover:bg-gray-900"
-        >Update password</button>
+        <button class="btn-account mt-10">Update password</button>
       </div>
     </form>
   </div>

@@ -1,6 +1,7 @@
 export const state = () => ({
   user: null,
-  authenticated: false
+  authenticated: false,
+  is_admin: false
 })
 
 export const mutations = {

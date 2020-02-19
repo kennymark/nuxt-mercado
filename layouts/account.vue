@@ -16,11 +16,7 @@
         v-for="item in items"
         :key="item.icon"
       >
-        <nuxt-link
-          :to="'/account/'+item.route"
-          class="border-gray-500 text-lg"
-          exact-active-class="font-medium"
-        >
+        <nuxt-link :to="'/account/'+item.route" class="border-gray-500 text-lg">
           <i :class="item.icon" class="mr-3"></i>
           {{item.title |capitalize}}
         </nuxt-link>

@@ -4,57 +4,34 @@
 
     <form @submit.prevent="updateDetails" class="bg-white p-3 rounded-lg shadow-md">
       <div class="flex flex-wrap mb-4 mx-3">
-        <label class="text-left block text-gray-600 text-lg mb-2" for="grid-first-name">First Name</label>
-        <input
-          class="input focus:outline-none focus:bg-white focus:border-gray-500"
-          id="first_name"
-          type="text"
-          placeholder="Jane"
-        />
+        <label class="label" for="grid-first-name">First Name</label>
+        <input class="input" id="first_name" type="text" placeholder="Jane" />
       </div>
 
       <div class="flex flex-wrap mb-4 mx-3">
-        <label class="text-left block text-gray-600 text-lg mb-2" for="last_name">Last Name</label>
-        <input
-          class="input focus:outline-none focus:bg-white focus:border-gray-500"
-          id="last_name"
-          type="text"
-          placeholder="Doe"
-        />
+        <label class="label" for="last_name">Last Name</label>
+        <input class="input" id="last_name" type="text" placeholder="Doe" />
       </div>
 
       <div class="flex flex-wrap mb-4 mx-3">
-        <label class="text-left block text-gray-600 text-lg mb-2" for="email">Email</label>
-        <input
-          class="input focus:outline-none focus:bg-white focus:border-gray-500"
-          id="email"
-          type="email"
-          placeholder="example@example.com"
-        />
+        <label class="label" for="email">Email</label>
+        <input class="input" id="email" type="email" placeholder="example@example.com" />
       </div>
 
       <div class="flex flex-wrap mb-4 mx-3">
-        <label class="text-left block text-gray-600 text-lg mb-2" for="phone">Phone no</label>
-        <input
-          class="input focus:outline-none focus:bg-white focus:border-gray-500"
-          id="phone"
-          type="phone"
-          placeholder="07985784280"
-        />
+        <label class="label" for="phone">Phone no</label>
+        <input class="input" id="phone" type="phone" placeholder="07985784280" />
       </div>
 
       <div class="flex flex-wrap mb-4 mx-3">
-        <label class="text-left block text-gray-600 text-lg mb-2" for="dob">Date of birth</label>
-
+        <label class="label" for="dob">Date of birth</label>
         <div>
           <el-date-picker v-model="form.dob" type="date" placeholder="Pick a day" />
         </div>
       </div>
 
       <div class="flex flex-wrap mb-2 m-3">
-        <button
-          class="bg-gray-800 rounded-md mt-10 p-3 border hover:shadow-xl text-gray-200 text-base tracking-wider mr-4 hover:bg-gray-900"
-        >Update Details</button>
+        <button class="btn-account mt-10">Update Details</button>
       </div>
     </form>
   </div>

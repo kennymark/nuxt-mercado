@@ -1,15 +1,8 @@
 <template>
   <transition name="fade">
-    <!-- <input
-      type="text"
-      class="sm:w-full focus:outline-none bg-gray-300 p-4 text-lg tracking-tight mx-auto text-black border focus:border-gray-400"
-      placeholder="Search for products here"
-      v-if="show"
-    />-->
-
     <input
       type="text"
-      class="p-3 bg-gray-300 focus:outline-none border border-gray-200 focus:border-gray-300 w-2/6 text-base rounded-lg focus:bg-white mx-auto font-thin tracking-tight"
+      class="p-3 bg-gray-300 border focus:border-gray-300 w-2/6 text-base rounded-lg focus:bg-white tracking-tight"
       placeholder="Search here"
       v-if="show"
       v-model="model"

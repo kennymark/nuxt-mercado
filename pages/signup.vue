@@ -4,62 +4,34 @@
     <h1 class="text-4xl font-semibold text-gray-700 text-left pb-10 mx-3">Please sign up</h1>
     <form @submit.prevent="signup">
       <div class="flex flex-wrap mb-4 mx-3">
-        <label class="text-left block text-gray-600 text-lg mb-2" for="grid-first-name">First Name</label>
-        <input
-          class="input focus:outline-none focus:bg-white focus:border-gray-500"
-          id="first-name"
-          type="text"
-          placeholder="Jane"
-        />
+        <label class="input" for="grid-first-name">First Name</label>
+        <input class="input" id="first-name" type="text" placeholder="Jane" />
       </div>
 
       <div class="flex flex-wrap mb-4 mx-3">
-        <label class="text-left block text-gray-600 text-lg mb-2" for="last-name">Last Name</label>
-        <input
-          class="input focus:outline-none focus:bg-white focus:border-gray-500"
-          id="last-name"
-          type="text"
-          placeholder="Doe"
-        />
+        <label class="input" for="last-name">Last Name</label>
+        <input class="input" id="last-name" type="text" placeholder="Doe" />
       </div>
 
       <div class="flex flex-wrap mb-4 mx-3">
-        <label class="text-left block text-gray-600 text-lg mb-2" for="email">Email</label>
-        <input
-          class="input focus:outline-none focus:bg-white focus:border-gray-500"
-          id="grid-password"
-          type="email"
-          placeholder="example@example.com"
-        />
+        <label class="label" for="email">Email</label>
+        <input class="input" id="grid-password" type="email" placeholder="example@example.com" />
       </div>
 
       <div class="flex flex-wrap mb-4 mx-3">
-        <label class="text-left block text-gray-600 text-lg mb-2" for="grid-password">Password</label>
-        <input
-          class="input focus:outline-none focus:bg-white focus:border-gray-500"
-          id="grid-password"
-          type="password"
-          placeholder="******************"
-        />
+        <label class="label" for="grid-password">Password</label>
+        <input class="input" id="grid-password" type="password" placeholder="******************" />
       </div>
 
       <div class="flex flex-wrap mb-2">
         <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-          <label class="text-left block text-gray-600 text-lg mb-2" for="grid-city">City</label>
-          <input
-            class="input focus:outline-none focus:bg-white focus:border-gray-500"
-            id="grid-city"
-            type="text"
-            placeholder="Chester"
-          />
+          <label class="label" for="grid-city">City</label>
+          <input class="input" id="grid-city" type="text" placeholder="Chester" />
         </div>
         <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-          <label class="text-left block text-gray-600 text-lg mb-2" for="grid-state">County</label>
+          <label class="label" for="grid-state">County</label>
           <div class="relative">
-            <select
-              class="input focus:outline-none focus:bg-white focus:border-gray-500"
-              id="grid-state"
-            >
+            <select class="input" id="grid-state">
               <option>Chester</option>
               <option>Manchester</option>
               <option>Liverpool</option>
@@ -81,20 +53,12 @@
         </div>
         <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
           <label class="text-left block text-gray-600 text-lg mb-2" for="grid-zip">Post Code</label>
-          <input
-            class="input focus:outline-none focus:bg-white focus:border-gray-500"
-            id="post-code"
-            type="text"
-            placeholder="90210"
-          />
+          <input class="input" id="post-code" type="text" placeholder="90210" />
         </div>
       </div>
 
       <div class="flex flex-wrap mb-2 m-3">
-        <button
-          class="bg-black hover:bg-gray-700 hover:shadow-md text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-          type="submit"
-        >Sign up</button>
+        <button class="btn-account mb-4" type="submit">Sign up</button>
       </div>
     </form>
   </div>

@@ -2,7 +2,11 @@
   <div>
     <div class="carousel mb-4">
       <el-carousel height="600px" :autoplay="true">
-        <el-carousel-item v-for="item in carousels" :key="item" :class="`bg-${item.color}-500`">
+        <el-carousel-item
+          v-for="item in carousels"
+          :key="item.color"
+          :class="`bg-${item.color}-500`"
+        >
           <h3 class="text-4xl font-bold text-center">{{ item.text }}</h3>
         </el-carousel-item>
       </el-carousel>
@@ -40,7 +44,7 @@ export default {
         { text: "Slide 2", color: "red" },
         { text: "Slide 3", color: "blue" },
         { text: "Slide 4", color: "yellow" },
-        { text: "Slide 5", color: "gray" }
+        { text: "Slide 5", color: "green" }
       ]
     };
   }

@@ -1,50 +1,52 @@
 <template>
   <div>
-    <nav
-      class="xl:flex sm:flex lg:flex-row sm:flex-col p-4 justify-between text-lg tracking-tight items-center"
-    >
-      <button
-        class="btn lg:hidden w-32 mb-5 flex items-center justify-center hover:shadow-lg focus:outline-none"
-        @click="hideMenu"
-      >
-        <i class="el-icon-menu mr-2 align-bottom text-2xl text-gray-700" /> Menu
+    <nav class="sm:flex p-5 justify-between text-lg items-center nav xl:h-20">
+      <button class="btn flex items-center sm:hidden" @click="hideMenu">
+        <i class="el-icon-menu mr-2 align-bottom text-lg text-gray-700" />Menu
       </button>
 
-      <div class="left lg:flex sm:flex sm:flex-col lg:flex-row" :class="{'sm:hidden': menuOpen}">
-        <nuxt-link to="/" class="link hover:text-gray-600">Home</nuxt-link>
+      <div class="left sm:flex justify-center my-1" :class="{'sm:hidden': menuOpen}">
+        <nuxt-link to="/" class="link hover:text-green-500">Home</nuxt-link>
 
-        <nuxt-link to="/products" class="link hover:text-gray-600">Products</nuxt-link>
+        <nuxt-link to="/products" class="link hover:text-green-500">Products</nuxt-link>
 
-        <nuxt-link to="/admin" class="link hover:text-gray-600">Admin</nuxt-link>
+        <nuxt-link to="/admin" class="link hover:text-green-500">Dashboard</nuxt-link>
       </div>
 
-      <input
-        type="text"
-        class="p-3 bg-gray-300 focus:outline-none border border-gray-200 focus:border-gray-300 lg:w-2/6 sm:w-full text-base rounded-lg focus:bg-white mx-auto font-thin tracking-tight"
-        placeholder="Search here"
-      />
+      <transition name="fade">
+        <input
+          type="text"
+          class="py-3 px-5 bg-gray-200 focus:outline-none border focus:border-gray-200 xl:w-2/6 sm:w-full text-base rounded-lg focus:bg-white tracking-tight mr-3 my-0 sm:my-4 lg:my-0 focus:shadow-xl duration-200"
+          ref="searchbox"
+          placeholder="Search for products here..."
+          v-if="showSearch"
+        />
+      </transition>
 
-      <div class="right lg:flex sm:flex sm:flex-col lg:flex-row" :class="{'sm:hidden': menuOpen}">
-        <nuxt-link to="/login" class="link hover:text-gray-600" v-if="!$store.state.user">Login</nuxt-link>
+      <!-- $refs.searchbox.focus();  -->
 
-        <nuxt-link to="/signup" class="link hover:text-gray-600" v-if="!$store.state.user">Signup</nuxt-link>
+      <div class="right flex-row sm:flex-col mt-1" :class="{'sm:hidden': menuOpen}">
+        <nuxt-link to="/login" class="link hover:text-green-500" v-if="!$store.state.user">Login</nuxt-link>
 
-        <nuxt-link to="/account" class="link hover:text-gray-600">
-          <i class="el-icon-user font-bold text-2xl"></i>
+        <nuxt-link to="/signup" class="link hover:text-green-500" v-if="!$store.state.user">Signup</nuxt-link>
+
+        <p class="link hover:text-green-600 cursor-pointer" @click="showSearch = !showSearch">
+          <i class="el-icon-search text-xl font-bold"></i>
+          <span class="sm:hidden">Search</span>
+        </p>
+
+        <nuxt-link to="/account" class="link hover:text-green-500">
+          <i class="el-icon-user font-bold text-xl"></i>
           <span class="sm:hidden">Account</span>
         </nuxt-link>
 
-        <!-- <p class="link hover:text-gray-600 cursor-pointer" @click="showSearch = !showSearch">
-          <i class="el-icon-search text-2xl"></i>
-          <span class="sm:hidden">Search</span>
-        </p>-->
-        <a class="link hover:text-gray-600 cursor-pointer" @click="openCart">
-          <i class="el-icon-shopping-bag-1 font-medium text-2xl"></i>
+        <a class="link hover:text-green-500 cursor-pointer" @click="openCart">
+          <i class="el-icon-shopping-bag-1 font-bold text-xl"></i>
           <span class="sm:hidden">Cart</span>
         </a>
       </div>
     </nav>
-    <cart-drawer show="drawer" />
+    <cart-drawer />
   </div>
 </template>
 
@@ -78,3 +80,9 @@ export default {
   }
 };
 </script>
+
+<style >
+.nav {
+  transition: all 0.3s ease;
+}
+</style>

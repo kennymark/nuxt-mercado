@@ -78,7 +78,7 @@ export default {
   ** Build configuration
   */
   build: {
-    // extractCSS: true,
+    extractCSS: true,
     /*
     ** You can extend webpack config here
     */
@@ -93,6 +93,6 @@ export default {
     ]
   },
   router: {
-    linkExactActiveClass: 'font-medium'
+    linkExactActiveClass: 'font-medium text-green-400 '
   }
 }

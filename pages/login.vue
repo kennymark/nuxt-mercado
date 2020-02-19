@@ -5,9 +5,9 @@
 
     <form class="bg-white px-8 pt-6 pb-8 mb-4" @submit.prevent="login">
       <div class="mb-4">
-        <label class="text-left block text-gray-700 text-lg mb-2" for="email">Email</label>
+        <label class="label" for="email">Email</label>
         <input
-          class="input focus:outline-none focus:bg-white focus:border-gray-500"
+          class="input"
           id="email"
           type="text"
           v-model="form.email"
@@ -15,9 +15,9 @@
         />
       </div>
       <div class="mb-6">
-        <label class="text-left block text-gray-700 text-lg mb-2" for="password">Password</label>
+        <label class="label" for="password">Password</label>
         <input
-          class="input focus:outline-none focus:bg-white focus:border-gray-500"
+          class="input"
           id="password"
           type="password"
           v-model="form.password"
@@ -25,10 +25,7 @@
         />
       </div>
       <div class="flex items-center justify-between">
-        <button
-          class="bg-black hover:bg-gray-700 hover:shadow-md text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-          type="submit"
-        >Sign In</button>
+        <button class="btn-account" type="submit">Sign In</button>
         <a
           class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800"
           href="#"

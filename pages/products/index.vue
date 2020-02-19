@@ -12,7 +12,7 @@
       </el-select>
     </div>
     <div
-      class="lg:grid sm:grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 lg:gap-4 sm:gap-2 lg:py-5 p-4"
+      class="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-2 lg:gap-4 sm:gap-2 lg:py-5 p-4"
     >
       <div v-for="(item, key) in 48" :key="key">
         <product-card :item="item" @viewProduct="viewProduct" />

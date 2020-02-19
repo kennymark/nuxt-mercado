@@ -37,39 +37,21 @@
         class="lg:grid sm:grid lg:grid-cols-3 sm:grid-cols-1 sm:grid-cols-2 lg:gap-4 sm:gap-2 mt-4"
       >
         <div class="flex flex-wrap mb-3">
-          <label class="text-left block text-gray-600 text-lg mb-2" for="grid-city">Card Number</label>
-          <input
-            class="input focus:outline-none focus:bg-white focus:border-gray-500"
-            id="card_no"
-            type="text"
-            placeholder="424242424242"
-          />
+          <label class="label" for="grid-city">Card Number</label>
+          <input class="input" id="card_no" type="text" placeholder="424242424242" />
         </div>
         <div class="flex flex-wrap mb-3">
-          <label class="text-left block text-gray-600 text-lg mb-2" for="grid-city">Expiration Date</label>
-          <input
-            class="input focus:outline-none focus:bg-white focus:border-gray-500"
-            id="exp-date"
-            type="text"
-            placeholder="Chester"
-          />
+          <label class="label" for="grid-city">Expiration Date</label>
+          <input class="input" id="exp-date" type="text" placeholder="Chester" />
         </div>
         <div class="flex flex-wrap mb-3">
-          <label class="text-left block text-gray-600 text-lg mb-2" for="grid-city">City</label>
-          <input
-            class="input focus:outline-none focus:bg-white focus:border-gray-500"
-            id="grid-city"
-            type="text"
-            placeholder="Chester"
-          />
+          <label class="label" for="grid-city">City</label>
+          <input class="input" id="grid-city" type="text" placeholder="Chester" />
         </div>
       </div>
 
       <div class="flex flex-wrap mb-2">
-        <button
-          @click="savePayment"
-          class="bg-gray-800 rounded-md mt-10 p-3 border hover:shadow-xl text-gray-200 text-base tracking-wider mr-4 hover:bg-gray-900"
-        >Save Card</button>
+        <button @click="savePayment" class="btn-account mt-10">Save Card</button>
       </div>
     </form>
   </div>
