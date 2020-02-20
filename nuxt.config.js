@@ -17,7 +17,9 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'script', src: 'https://js.stripe.com/v3/' }
+      { rel: 'script', src: 'https://js.stripe.com/v3/' },
+      // { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto' }
+
     ]
   },
   /*
@@ -28,14 +30,14 @@ export default {
   },
 
   loadingIndicator: {
-    name: '~/custom-locading-indicator.html',
+
     color: '#000',
     background: '#fff'
   },
 
   css: [
     './assets/css/main.css',
-    'element-ui/lib/theme-chalk/index.css'
+    '~element-ui/lib/theme-chalk/index.css'
   ],
 
   plugins: [
