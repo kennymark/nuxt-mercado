@@ -25,7 +25,7 @@
       </div>
     </div>
     <div class="w-full sm:p-3 lg:p-4">
-      <nuxt />
+      <nuxt-child />
     </div>
   </div>
 </template>

@@ -1,9 +1,13 @@
 
 export default {
   mode: 'universal',
-  /*
-  ** Headers of the page
-  */
+
+  vue: {
+    config: {
+      productionTip: false,
+      devtools: true
+    }
+  },
   head: {
     title: 'Mercado' || '',
     meta: [
@@ -19,26 +23,27 @@ export default {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#fff' },
-  /*
-  ** Global CSS
-  */
+  loading: {
+    color: '#68d391', height: '10px'
+  },
+
+  loadingIndicator: {
+    name: '~/custom-locading-indicator.html',
+    color: '#000',
+    background: '#fff'
+  },
+
   css: [
     './assets/css/main.css',
     'element-ui/lib/theme-chalk/index.css'
   ],
-  /*
-  ** Plugins to load before mounting the App
-  */
+
   plugins: [
     '~/plugins/vue2-filters',
     '~/plugins/vuelidate',
     { src: '~/plugins/vuex-persist', ssr: false }
-
   ],
-  /*
-  ** Nuxt.js dev-modules
-  */
+
   buildModules: [
     ['@nuxtjs/google-analytics', {
       id: 'UA-68267074-3'
@@ -46,9 +51,7 @@ export default {
     '@nuxtjs/tailwindcss',
     '@nuxtjs/global-components',
   ],
-  /*
-  ** Nuxt.js modules
-  */
+
   modules: [
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
@@ -57,12 +60,12 @@ export default {
     'nuxt-element-ui'
   ],
 
-  elementUI: {
-    // components: [
-    //   'Drawer', 'DatePicker', 'Icon', 'Select', 'Option', 'Input', 'Alert', 'Steps', 'Step', ' Notification',
-    // ],
-    locale: 'en',
-  },
+  // elementUI: {
+  //   // components: [
+  //   //   'Drawer', 'DatePicker', 'Icon', 'Select', 'Option', 'Input', 'Alert', 'Steps', 'Step', ' Notification',
+  //   // ],
+  //   locale: 'en',
+  // },
   webfontloader: {
     google: {
       families: ['Rubik:400,500,700&display=swap']

@@ -2,7 +2,7 @@
   <div>
     <Nav />
     <div class="container mx-auto mt-5">
-      <nuxt />
+      <nuxt-child />
     </div>
   </div>
 </template>

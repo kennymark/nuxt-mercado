@@ -27,7 +27,8 @@ export default {
     },
     search(e) {
       console.log("pressed enter");
-      this.$emit("onSearch", e.target.value);
+      this.$emit("onSearch", this.vmodel);
+      this.vmodel = "";
     }
   }
 };

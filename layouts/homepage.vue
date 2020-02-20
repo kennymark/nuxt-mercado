@@ -2,7 +2,7 @@
   <div>
     <Nav />
     <CategoriesNav />
-    <nuxt />
+    <nuxt-child />
   </div>
 </template>
 
