@@ -27,7 +27,7 @@ export default {
   ** Customize the progress-bar color
   */
   loading: {
-    color: '#68d391', height: '10px'
+    color: '#68d391', height: '5px', continuous: true
   },
 
   css: [
@@ -68,9 +68,9 @@ export default {
   */
   axios: {
   },
-  /*
-  ** Build configuration
-  */
+  purgeCSS: {
+    whitelist: ['element', 'el'],
+  },
   build: {
     extractCSS: true,
     transpile: [/^element-ui/],
@@ -80,14 +80,8 @@ export default {
     extend(config, ctx) {
     }
   },
-  generate: {
-    fallback: true,
-    devtools: true,
-    routes: [
 
-    ]
-  },
   router: {
-    linkExactActiveClass: 'font-medium text-green-400 '
+    linkExactActiveClass: 'text-green-500'
   }
 }

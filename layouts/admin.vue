@@ -5,7 +5,6 @@
     >
       <div class="text-base mb-10 flex flex-row justify-between">
         <nuxt-link to="/" class="rounded">
-          <!--  Back -->
           <button class="btn shadow-sm hover:shadow-lg">
             <i class="el-icon-arrow-left" />Back
           </button>
@@ -13,18 +12,19 @@
         <button class="btn sm:hidden shadow-sm">Menu</button>
       </div>
 
-      <div
-        class="rounded-lg p-3 hover:bg-white mt-4 hover:shadow-2xl hover:border-gray-300 border-white"
-        v-for="item in items"
-        :key="item.icon"
-      >
-        <nuxt-link :to="'/admin/'+item.route" class="border-gray-500 text-lg">
+      <div class="flex flex-col">
+        <nuxt-link
+          :to="'/admin/'+item.route"
+          class="text-lg rounded-lg p-3 hover:bg-white mt-4 hover:shadow-2xl"
+          v-for="item in items"
+          :key="item.icon"
+        >
           <i :class="item.icon" class="mr-3"></i>
           {{item.title}}
         </nuxt-link>
       </div>
     </div>
-    <div class="w-full sm:p-3 lg:p-4">
+    <div class="w-full sm:p-3 lg:p-4 bg-gray-200">
       <nuxt-child />
     </div>
   </div>

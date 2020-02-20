@@ -3,22 +3,28 @@
     <h1 class="title">Checkout</h1>
 
     <div class="sm:flex sm:flex-col lg:flex-row">
-      <div class="h-64 shadow border lg:w-2/3 sm:w-full p-3 rounded-lg flex-col">
-        <el-steps :active="active" simple align-center>
-          <address />
+      <div class="shadow border lg:w-2/3 sm:w-full p-3 rounded-lg flex-col mb-24">
+        <el-steps :active="active" align-center>
           <el-step title="Delivery" icon="el-icon-postcard"></el-step>
           <el-step title="Payment" icon="el-icon-bank-card"></el-step>
           <el-step title="Place Order" icon="el-icon-c-scale-to-original"></el-step>
         </el-steps>
 
-        <div class="btns flex justify-between">
-          <button class="btn-account mt-24" v-if="active>0" @click="active--">Previous</button>
+        <div class="mx-auto px-6 mt-6 mb-3">
+          <Address v-if="active == 0" />
+          <Payment v-if="active == 1" />
+          <Confirm v-if="active == 2" />
+        </div>
 
-          <button class="btn-account mt-24" @click="next" v-if="active >= 0">Continue</button>
+        <div class="btns px-6 mb-2 flex justify-between lg:flex-row sm:flex-col">
+          <button class="btn-account" v-if="active>0" @click="active--">Previous</button>
+          <button class="btn-account mr-0" @click="active++" v-if="active >= 0">Continue</button>
         </div>
       </div>
+
       <div
-        class="rounded-lg border shadow lg:w-1/3 p-3 lg:ml-6 lg:mt-0 sm:mt-4 flex flex-col sm:w-full"
+        class="rounded-lg border shadow lg:w-1/3 p-3 lg:ml-6 lg:mt-0 sm:mt-4 flex h-auto flex-col sm:w-full"
+        style="max-height:500px"
       >
         <h2 class="font-medium text-2xl mb-3 text-gray-700 text-center">Your Order</h2>
         <div class="products h-20 border rounded-lg mb-2 bg-gray-100" v-for="item in 4" :key="item"></div>
@@ -34,24 +40,25 @@
 <script>
 import Address from "~/components/checkout/address.vue";
 import Payment from "~/components/checkout/payment.vue";
-// import Confirm from "~/components/checkout/confirm.vue";
+import Confirm from "~/components/checkout/confirm.vue";
 
 export default {
   components: {
     Address,
-    Payment
-    // Confirm
+    Payment,
+    Confirm
+  },
+  watch: {
+    active(val) {
+      if (val == 3) {
+        this.active = 0;
+      }
+    }
   },
   data() {
     return {
       active: 0
     };
-  },
-
-  methods: {
-    next() {
-      if (this.active++ > 2) this.active = 0;
-    }
   }
 };
 </script>

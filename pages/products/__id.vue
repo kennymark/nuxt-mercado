@@ -19,8 +19,8 @@
         </div>
 
         <div class="lg:flex lg:flex-row sm:flex-col buttons mt-10 text-lg justify-round">
-          <button class="btn mr-3 hover:bg-gray-800 hover:text-gray-200 hover:shadow-xl">Add to Cart</button>
-          <button class="btn mr-3 hover:bg-green-500 hover:text-gray-200 hover:shadow-xl">Buy now</button>
+          <button class="btn mr-3 bg-gray-800 text-gray-200 hover:shadow-2xl">Add to Cart</button>
+          <button class="btn mr-3 bg-green-500 text-gray-100 hover:shadow-2xl">Buy now</button>
           <button
             class="mr-3 hover rounded-full py-3 px-4 bg-gray-300 hover:bg-gray-500 hover:shadow-md"
           >

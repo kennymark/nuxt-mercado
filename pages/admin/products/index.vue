@@ -1,7 +1,7 @@
 <template>
   <headerSearch title="products">
     <button
-      class="btn focus:outline-none hover:shadow-lg"
+      class="btn bg-gray-800 text-gray-300 shadow-sm border-0"
       slot="button"
       @click="createNewProduct"
     >Create product</button>

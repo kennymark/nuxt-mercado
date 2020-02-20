@@ -6,10 +6,10 @@
         @click.stop
       >
         <div class="lg:flex sm:flex justify-between px-3 items-center lg:flex-row sm:flex-col">
-          <h1 class="text-4xl">Shopping Cart</h1>
+          <h1 class="text-3xl text-gray-800">Shopping Cart</h1>
           <div class="buttons">
-            <button class="shadow-sm mr-3 btn" @click="checkout">Checkout</button>
-            <button class="shadow-sm btn" @click="handleClose">Close X</button>
+            <button class="shadow-sm mr-3 btn bg-green-500 text-gray-100" @click="checkout">Checkout</button>
+            <button class="shadow-sm btn bg-gray-800 text-gray-200" @click="handleClose">Close X</button>
           </div>
         </div>
 

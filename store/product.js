@@ -7,6 +7,7 @@ export const state = () => ({
   adminCurrentProduct: null,
   buyNowProduct: null,
   cartOpen: false,
+  allProducts: []
 })
 
 
@@ -37,6 +38,10 @@ export const mutations = {
 
   openCart(state, payload) {
     state.cartOpen = payload
+  },
+
+  setAllProduct(state, payload) {
+    state.allProducts = payload
   },
 
   decrementQuantity(state, product) {

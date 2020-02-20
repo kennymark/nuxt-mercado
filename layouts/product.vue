@@ -4,7 +4,7 @@
     <CategoriesNav />
     <div class="sm:flex sm:flex-col lg:flex-row w-full">
       <div class="lg:w-1/6 sm:w-full md:w-full p-4 lg:min-h-screen sm:h-auto md:h-auto p-20">
-        <div class="rounded-lg text-gray-800 mt-1 text-base" v-for="item in items" :key="item.icon">
+        <div class="rounded-lg text-gray-700 mt-2" v-for="item in items" :key="item.icon">
           <a to="#" class="cursor-pointer">{{item.title}}</a>
         </div>
       </div>
@@ -25,9 +25,14 @@ export default {
   data() {
     return {
       items: [
-        { title: "Men", icon: "el-icon-s-data", route: "" },
-        { title: "Women", icon: "el-icon-folder-add", route: "products" },
-        { title: "Children", icon: "el-icon-s-grid", route: "categories" }
+        { title: "shoes", icon: "el-icon-folder-add", route: "products" },
+        { title: "jackets", icon: "el-icon-s-grid", route: "categories" },
+        { title: "pants", icon: "el-icon-s-grid", route: "categories" },
+        { title: "jeans", icon: "el-icon-s-grid", route: "categories" },
+        { title: "rings", icon: "el-icon-s-grid", route: "categories" },
+        { title: "sports wear", icon: "el-icon-s-grid", route: "categories" },
+        { title: "shirts", icon: "el-icon-s-grid", route: "categories" },
+        { title: "outdoors", icon: "el-icon-s-grid", route: "categories" }
       ]
     };
   }

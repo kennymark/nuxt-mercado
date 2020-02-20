@@ -23,11 +23,10 @@
         <input class="input" id="phone" type="phone" placeholder="07985784280" />
       </div>
 
-      <div class="flex flex-wrap mb-4 mx-3">
+      <div class="flex flex-col mb-4 mx-3">
         <label class="label" for="dob">Date of birth</label>
-        <div>
-          <el-date-picker v-model="form.dob" type="date" placeholder="Pick a day" />
-        </div>
+
+        <el-date-picker v-model="form.dob" type="date" placeholder="Pick a day" change="p-3" />
       </div>
 
       <div class="flex flex-wrap mb-2 m-3">

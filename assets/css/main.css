@@ -26,3 +26,8 @@ h1, h2, h3 {
 a {
   transition: all .3s cubic-bezier(0.075, 0.82, 0.165, 1) !important;
 }
+
+.container-2 {
+  margin: auto;
+  width: 80%;
+}

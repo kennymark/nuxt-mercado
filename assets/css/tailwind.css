@@ -1,7 +1,5 @@
 @tailwind base;
 @tailwind components;
-
-
 .link {
   @apply block text-black mt-4 inline-block mt-0 mr-4
 }
@@ -23,7 +21,7 @@
 }
 
 .btn {
-  @apply btn border px-4 py-2 rounded-md cursor-pointer appearance-none
+  @apply btn border px-4 py-2 rounded-md cursor-pointer appearance-none transition-all duration-75
 }
 
 .btn-account, .btn-dark {
@@ -31,7 +29,7 @@
 }
 
 .btn-account:focus {
-  @apply shadow-xl bg-gray-900 outline-none
+  @apply outline-none
 }
 
 .btn-account:hover {
@@ -43,7 +41,7 @@
 }
 
 .btn:hover {
-  @apply shadow-lg
+  @apply shadow-xl
 }
 
 .label {

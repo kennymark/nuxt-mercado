@@ -14,16 +14,30 @@
     <div
       class="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-2 lg:gap-4 sm:gap-2 lg:py-5 p-4"
     >
-      <div v-for="(item, key) in 48" :key="key">
-        <product-card :item="item" @viewProduct="viewProduct" />
+      <div v-for="(product, key) in products" :key="key">
+        <product-card :product="product" @viewProduct="viewProduct" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import { firestore } from "~/firebase.config";
+
 export default {
   layout: "product",
+  async asyncData() {
+    const db = firestore.collection("products");
+    db.get().then(data => (this.rows = +data.size));
+    const snap = await db.get();
+
+    return {
+      products: snap.docs.map(doc => {
+        return { id: doc.id, ...doc.data() };
+      })
+    };
+  },
+
   data() {
     return {
       sortValue: "",
@@ -37,8 +51,8 @@ export default {
     };
   },
   methods: {
-    viewProduct(item) {
-      this.$router.push(`products/${item}`);
+    viewProduct(product) {
+      this.$router.push(`products/${product.id}`);
     }
   }
 };

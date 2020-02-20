@@ -6,7 +6,7 @@
       :key="key"
       class="p-4 mx-auto border border-gray-200 mb-3 rounded-lg shadow-md lg:flex sm: sm:flex-col lg:flex-col bg-white"
     >
-      <h1 class="text-xl mb-4 text-gray-600 font-bold">Returned</h1>
+      <h1 class="text-xl mb-4 text-gray-600 font-medium">Returned</h1>
       <div class="flex flex-row justify-between">
         <img
           src="https://picsum.photos/seed/200/300"
