@@ -12,7 +12,7 @@
       </el-carousel>
     </div>
 
-    <div class="container p-3">
+    <div class="container">
       <h1 class="text-bold uppercase text-2xl text-black">new</h1>
 
       <div class="lg:grid sm:grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-2 lg:gap-4 sm:gap-2">

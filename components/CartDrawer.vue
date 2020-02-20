@@ -1,11 +1,10 @@
 <template>
-  <transition
-    enter-active-class="slide-in"
-    leave-active-class="slide-out"
-    v-if="$store.state.product.cartOpen"
-  >
+  <transition name="slide" v-if="$store.state.product.cartOpen">
     <div class="overlay fixed top-0 min-h-screen min-w-full flex z-40" @click="handleClose">
-      <div class="bg-white overflow-scroll p-3 shadow-lg lg:w-2/6 w-full" @click.stop>
+      <div
+        class="right-0 fixed overflow-scroll p-3 shadow-lg lg:w-2/6 w-full bg-white h-full"
+        @click.stop
+      >
         <div class="lg:flex sm:flex justify-between px-3 items-center lg:flex-row sm:flex-col">
           <h1 class="text-4xl">Shopping Cart</h1>
           <div class="buttons">
@@ -52,26 +51,25 @@ export default {
   overflow-y: scroll;
 }
 .overlay {
-  background: #0000006e;
+  background: #2b2a2aaf;
   overflow-y: scroll;
 }
 
-.slide-in {
-  animation: slide-in 0.5s forwards;
-  -webkit-animation: slide-in 0.3s forwards;
+.slide-leave-active,
+.slide-enter-active {
+  transition: all 0.2s;
+}
+.slide-enter {
+  transform: translate(100%, 0);
 }
 
-.slide-out {
-  animation: slide-out 0.5s forwards;
-  -webkit-animation: slide-out 0.3s forwards;
+.slide-leave-to {
+  transform: translate(100%, 0);
 }
-
+/* 
 @keyframes slide-in {
-  0% {
-    transform: translateX(10%);
-  }
   100% {
-    transform: translateX(100%);
+    transform: translateX(-100%);
   }
 }
 
@@ -80,7 +78,7 @@ export default {
     transform: translateX(0%);
   }
   100% {
-    transform: translateX(-100%);
+    transform: translateX(100%);
   }
-}
+} */
 </style>
