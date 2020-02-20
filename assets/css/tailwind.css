@@ -1,6 +1,7 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@tailwind base;
+@tailwind components;
+
+
 .link {
   @apply block text-black mt-4 inline-block mt-0 mr-4
 }
@@ -52,3 +53,5 @@
 .card {
   @apply shadow-lg border border-gray-200
 }
+
+@tailwind utilities;

@@ -38,7 +38,7 @@ export default {
   plugins: [
     '~/plugins/vue2-filters',
     '~/plugins/vuelidate',
-    '@/plugins/element-ui',
+    '~/plugins/element-ui',
     { src: '~/plugins/vuex-persist', ssr: false }
   ],
 
@@ -46,7 +46,6 @@ export default {
     ['@nuxtjs/google-analytics', {
       id: 'UA-68267074-3'
     }],
-    '@nuxtjs/tailwindcss',
     '@nuxtjs/global-components',
   ],
 
@@ -54,6 +53,7 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     '@nuxtjs/dotenv',
+    '@nuxtjs/tailwindcss',
     'nuxt-webfontloader',
   ],
 
