@@ -37,7 +37,7 @@ export default {
 
   css: [
     './assets/css/main.css',
-    '~element-ui/lib/theme-chalk/index.css'
+    '~/node_modules/element-ui/lib/theme-chalk/index.css'
   ],
 
   plugins: [
