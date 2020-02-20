@@ -1,6 +1,7 @@
 
 export default {
-  mode: 'universal',
+  // mode: 'universal',
+  mode: 'spa',
 
   vue: {
     config: {
