@@ -1,7 +1,7 @@
 
 export default {
-  // mode: 'universal',
-  mode: 'spa',
+  mode: 'universal',
+
 
   vue: {
     config: {
@@ -30,20 +30,15 @@ export default {
     color: '#68d391', height: '10px'
   },
 
-  loadingIndicator: {
-
-    color: '#000',
-    background: '#fff'
-  },
-
   css: [
     './assets/css/main.css',
-    '~/node_modules/element-ui/lib/theme-chalk/index.css'
+    'element-ui/lib/theme-chalk/index.css'
   ],
 
   plugins: [
     '~/plugins/vue2-filters',
     '~/plugins/vuelidate',
+    '@/plugins/element-ui',
     { src: '~/plugins/vuex-persist', ssr: false }
   ],
 
@@ -60,15 +55,8 @@ export default {
     '@nuxtjs/pwa',
     '@nuxtjs/dotenv',
     'nuxt-webfontloader',
-    'nuxt-element-ui'
   ],
 
-  // elementUI: {
-  //   // components: [
-  //   //   'Drawer', 'DatePicker', 'Icon', 'Select', 'Option', 'Input', 'Alert', 'Steps', 'Step', ' Notification',
-  //   // ],
-  //   locale: 'en',
-  // },
   webfontloader: {
     google: {
       families: ['Rubik:400,500,700&display=swap']
@@ -85,6 +73,7 @@ export default {
   */
   build: {
     extractCSS: true,
+    transpile: [/^element-ui/],
     /*
     ** You can extend webpack config here
     */
