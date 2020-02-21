@@ -29,7 +29,7 @@
         Sign out
       </p>
     </div>
-    <div class="w-full xl:pt-10 lg:p-6 sm:p-4 pt-10 bg-gray-200">
+    <div class="w-full xl:pt-10 sm:p-2 pt-10 bg-gray-200">
       <nuxt-child />
     </div>
   </div>

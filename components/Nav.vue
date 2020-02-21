@@ -13,7 +13,7 @@
         <nuxt-link to="/admin" class="link hover:text-green-500">Dashboard</nuxt-link>
       </div>
 
-      <transition name="fade">
+      <transition name="page">
         <input
           type="text"
           class="py-3 px-5 bg-gray-200 focus:outline-none border focus:border-gray-200 xl:w-2/6 sm:w-full text-base rounded-lg focus:bg-white tracking-tight mr-3 my-0 sm:my-4 lg:my-0 focus:shadow-xl duration-200"
@@ -31,18 +31,24 @@
         <nuxt-link to="/signup" class="link hover:text-green-500" v-if="!$store.state.user">Signup</nuxt-link>
 
         <p class="link hover:text-green-600 cursor-pointer" @click="showSearch = !showSearch">
-          <i class="el-icon-search text-xl font-bold"></i>
+          <i class="el-icon-search text-xl font-bold" />
           <span class="sm:hidden">Search</span>
         </p>
 
         <nuxt-link to="/account" class="link hover:text-green-500">
-          <i class="el-icon-user font-bold text-xl"></i>
+          <i class="el-icon-user font-bold text-xl" />
           <span class="sm:hidden">Account</span>
         </nuxt-link>
 
-        <a class="link hover:text-green-500 cursor-pointer" @click="openCart">
+        <a
+          class="link hover:text-green-500 cursor-pointer bg-green-100 px-2 py-1 rounded"
+          @click="openCart"
+        >
           <i class="el-icon-shopping-bag-1 font-bold text-xl"></i>
-          <span class="sm:hidden">Cart</span>
+          <span class="font-normal text-gray-700 hover:text-green-700">
+            <span class="sm:hidden">Cart</span>
+            {{count}}
+          </span>
         </a>
       </div>
     </nav>
@@ -54,6 +60,8 @@
 <script>
 import Search from "~/components/ui/global-search.vue";
 import CartDrawer from "~/components/CartDrawer.vue";
+import { mapGetters } from "vuex";
+
 export default {
   components: { Search, CartDrawer },
   data() {
@@ -64,6 +72,9 @@ export default {
       menuOpen: false,
       showSearch: false
     };
+  },
+  computed: {
+    ...mapGetters({ count: "product/getCartCount" })
   },
   methods: {
     hideMenu() {

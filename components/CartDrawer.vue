@@ -2,20 +2,31 @@
   <transition name="slide" v-if="$store.state.product.cartOpen">
     <div class="overlay fixed top-0 min-h-screen min-w-full flex z-40" @click="handleClose">
       <div
-        class="right-0 fixed overflow-scroll p-3 shadow-lg lg:w-2/6 w-full bg-white h-full"
+        class="right-0 fixed overflow-scroll p-3 shadow-lg xl:w-2/6 w-full bg-white h-full"
         @click.stop
       >
-        <div class="lg:flex sm:flex justify-between px-3 items-center lg:flex-row sm:flex-col">
+        <div class="flex flex-col px-3 items-center sm:flex-col lg:mb-5 sm:mb-2">
           <h1 class="text-3xl text-gray-800">Shopping Cart</h1>
           <div class="buttons">
-            <button class="shadow-sm mr-3 btn bg-green-500 text-gray-100" @click="checkout">Checkout</button>
-            <button class="shadow-sm btn bg-gray-800 text-gray-200" @click="handleClose">Close X</button>
+            <button class="mr-3 btn bg-green-500 text-gray-100" @click="checkout">Checkout</button>
+
+            <button class="btn mr-3" @click="resetCart">
+              Empty Cart
+              <i class="el-icon-refresh"></i>
+            </button>
+
+            <button
+              class="mr-3 btn bg-gray-800 hover:bg-gray-900 text-gray-200"
+              @click="handleClose"
+            >
+              Close
+              <i class="el-icon-close text-white" />
+            </button>
           </div>
         </div>
+        <!-- <cart-product v-for="product in 4" :length="cart.length" :key="product" /> -->
 
-        <div v-for="product in cart" :key="product" class="border-bottom bg-white px-4 py-2">
-          <cart-product :length="cart.length" :product="product" />
-        </div>
+        <div v-for="prod in 20" class="border border-gray-200 h-24 mb-3 rounded-lg" :key="prod"></div>
         <!-- 
         <img v-if="!cart.length" :src="emptyCart" alt class="mt-5" />
         <h5
@@ -28,20 +39,12 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
+import common from "~/mixins/common";
 export default {
-  data() {
-    return {
-      cart: []
-    };
-  },
-  methods: {
-    handleClose() {
-      this.$store.commit("product/openCart", false);
-    },
-    checkout() {
-      this.$store.commit("product/openCart", false);
-      this.$router.push("/checkout");
-    }
+  mixins: [common],
+  computed: {
+    ...mapState({ cart: "product/cart" })
   }
 };
 </script>

@@ -26,9 +26,10 @@ import { firestore } from "~/firebase.config";
 
 export default {
   layout: "product",
+
   async asyncData() {
     const db = firestore.collection("products");
-    db.get().then(data => (this.rows = +data.size));
+    // db.get().then(data => (this.rows = +data.size));
     const snap = await db.get();
 
     return {
@@ -37,7 +38,14 @@ export default {
       })
     };
   },
-
+  watch: {
+    $route(val) {
+      console.log(val.query);
+    }
+  },
+  mounted() {
+    // this.$store.commit("product/setAllProducts", this.products);
+  },
   data() {
     return {
       sortValue: "",

@@ -14,13 +14,15 @@ export const state = () => ({
 export const mutations = {
 
   addToCart(state, product) {
-    const cart = state.cart.find((item) => item.id == product.id)
+
+    const cart = state.cart.find((item) => item && item.id == product.id)
     const buyNowCart = state.buyNowProduct;
     if (buyNowCart) { buyNowCart.quantity++ }
     if (cart) { cart.quantity++ }
     else {
       state.cart.push(product)
     }
+
   },
 
   removeFromCart(state, product) {
@@ -28,7 +30,7 @@ export const mutations = {
     state.cart.splice(cartIndex, 1)
   },
 
-  removeAllFromCart(state) {
+  resetCart(state) {
     state.cart = []
   },
 
@@ -40,7 +42,7 @@ export const mutations = {
     state.cartOpen = payload
   },
 
-  setAllProduct(state, payload) {
+  setAllProducts(state, payload) {
     state.allProducts = payload
   },
 
