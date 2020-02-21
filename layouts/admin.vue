@@ -19,12 +19,12 @@
           v-for="item in items"
           :key="item.icon"
         >
-          <i :class="item.icon" class="mr-3"></i>
+          <i :class="item.icon" class="mr-3 text-lg"></i>
           {{item.title}}
         </nuxt-link>
       </div>
     </div>
-    <div class="w-full sm:p-3 lg:p-4 bg-gray-200">
+    <div class="w-full sm:p-3 lg:p-4">
       <nuxt-child />
     </div>
   </div>
@@ -38,6 +38,12 @@ export default {
         { title: "Overview", icon: "el-icon-s-data", route: "" },
         { title: "Products", icon: "el-icon-folder-add", route: "products" },
         { title: "Categories", icon: "el-icon-s-grid", route: "categories" },
+        { title: "Discounts", icon: "el-icon-discount", route: "discounts" },
+        {
+          title: "Promotions",
+          icon: "el-icon-s-promotion",
+          route: "promotions"
+        },
 
         { title: "Customers", icon: "el-icon-s-custom", route: "customers" },
         { title: "Orders", icon: "el-icon-sold-out", route: "orders" },

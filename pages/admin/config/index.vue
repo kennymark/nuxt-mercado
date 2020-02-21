@@ -7,6 +7,11 @@
 <script>
 export default {
   layout: "admin",
+  head() {
+    return {
+      title: "Configuration"
+    };
+  },
   data() {
     return {
       config: [

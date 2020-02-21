@@ -40,6 +40,11 @@
 export default {
   middleware: "auth",
   layout: "account",
+  head() {
+    return {
+      title: "My Details"
+    };
+  },
   data() {
     return {
       currentPage: 1,

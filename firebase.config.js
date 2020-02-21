@@ -1,6 +1,6 @@
 import firebase from 'firebase/app'
 import 'firebase/firestore'
-import 'firebase/firebase-auth'
+import 'firebase/auth'
 
 
 const config = {
@@ -17,8 +17,8 @@ const config = {
 
 !firebase.apps.length ? firebase.initializeApp(config) : ''
 
-
-export const auth = firebase.auth()
-export const firestore = firebase.firestore()
 export const fb = firebase
+
+export const auth = fb.auth()
+export const firestore = fb.firestore()
 

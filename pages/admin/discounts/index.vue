@@ -5,7 +5,7 @@ export default {
   layout: "admin",
   head() {
     return {
-      title: "Order"
+      title: "Discounts"
     };
   }
 };

@@ -34,7 +34,11 @@ import { firestore } from "~/firebase.config";
 
 export default {
   layout: "product",
-
+  head() {
+    return {
+      title: "Home"
+    };
+  },
   async asyncData() {
     const db = firestore.collection("products");
     // db.get().then(data => (this.rows = +data.size));
@@ -53,12 +57,6 @@ export default {
     }
   },
 
-  mounted() {
-    // if (this.$route.query.search) {
-    //   this.searchQuery = this.$route.query.search;
-    // }
-  },
-
   data() {
     return {
       sortValue: "",
@@ -72,6 +70,7 @@ export default {
       ]
     };
   },
+
   methods: {
     viewProduct(product) {
       this.$router.push(`products/${product.id}`);

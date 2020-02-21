@@ -61,6 +61,11 @@
 export default {
   middleware: "auth",
   layout: "account",
+  head() {
+    return {
+      title: "My Payments"
+    };
+  },
   data() {
     return {
       currentPage: 1,

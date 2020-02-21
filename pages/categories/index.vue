@@ -4,7 +4,12 @@
 
 <script>
 export default {
-  layout: "product"
+  layout: "product",
+  head() {
+    return {
+      title: "Categories"
+    };
+  }
 };
 </script>
 

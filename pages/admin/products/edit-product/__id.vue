@@ -6,7 +6,12 @@
 
 <script>
 export default {
-  layout: "admin"
+  layout: "admin",
+  head() {
+    return {
+      title: "Edit by Id"
+    };
+  }
 };
 </script>
 

@@ -28,9 +28,17 @@
       <!-- $refs.searchbox.focus();  -->
 
       <div class="right flex-row sm:flex-col mt-1" :class="{'sm:hidden': menuOpen}">
-        <nuxt-link to="/login" class="link hover:text-green-500" v-if="!$store.state.user">Login</nuxt-link>
+        <nuxt-link
+          to="/login"
+          class="link hover:text-green-500"
+          v-if="!$store.state.user.authenticated"
+        >Login</nuxt-link>
 
-        <nuxt-link to="/signup" class="link hover:text-green-500" v-if="!$store.state.user">Signup</nuxt-link>
+        <nuxt-link
+          to="/signup"
+          class="link hover:text-green-500"
+          v-if="!$store.state.user.authenticated"
+        >Signup</nuxt-link>
 
         <p class="link hover:text-green-600 cursor-pointer" @click="showSearch = !showSearch">
           <i class="el-icon-search text-xl font-bold" />

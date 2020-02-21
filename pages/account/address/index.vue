@@ -64,6 +64,11 @@
 export default {
   middleware: "auth",
   layout: "account",
+  head() {
+    return {
+      title: "My Address"
+    };
+  },
   data() {
     return {
       currentPage: 1,

@@ -13,10 +13,10 @@
     </div>
 
     <div
-      class="lg:w-1/3 sm:w-full sm:mt-5 p-6 overflow-y-scroll md:rounded-lg bg-gray-600 lg:ml-8"
+      class="lg:w-1/3 sm:w-full sm:mt-5 p-6 overflow-y-scroll md:rounded-lg bg-gray-400 lg:ml-8"
       style="max-height:900px "
     >
-      <h1 class="text-2xl text-black mb-3 text-gray-100 text-center">Activity</h1>
+      <h1 class="text-2xl text-black mb-3 text-center">Activity</h1>
       <div
         v-for="(item,key) in data"
         :key="key"
@@ -34,7 +34,11 @@ import StatCard from "@/components/ui/stat-card.vue";
 export default {
   layout: "admin",
   components: { StatCard },
-  // middleware: "auth",
+  head() {
+    return {
+      title: "Dashboard"
+    };
+  },
   computed: {
     number() {
       return Math.ceil(Math.random() * 400);

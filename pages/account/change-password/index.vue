@@ -38,6 +38,11 @@ import { required, minLength, between } from "vuelidate/lib/validators";
 export default {
   middleware: "auth",
   layout: "account",
+  head() {
+    return {
+      title: "Change password"
+    };
+  },
   data() {
     return {
       currentPage: 1,

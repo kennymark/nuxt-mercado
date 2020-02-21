@@ -5,7 +5,7 @@
       <slot name="button" />
     </div>
     <input
-      class="input bg-white shadow-sm focus:border-gray-400"
+      class="input shadow-sm focus:border-gray-400"
       :id="title+'-search'"
       type="text"
       @keyup="input"

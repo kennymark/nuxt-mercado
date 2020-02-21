@@ -6,7 +6,12 @@
 
 <script>
 export default {
-  layout: "admin"
+  layout: "admin",
+  head() {
+    return {
+      title: "Add a new product"
+    };
+  }
 };
 </script>
 

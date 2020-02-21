@@ -43,6 +43,11 @@ import Payment from "~/components/checkout/payment.vue";
 import Confirm from "~/components/checkout/confirm.vue";
 
 export default {
+  head() {
+    return {
+      title: "Checkout"
+    };
+  },
   components: {
     Address,
     Payment,

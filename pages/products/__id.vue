@@ -45,7 +45,10 @@
             class="btn mr-3 bg-gray-800 text-gray-200 hover:shadow-2xl"
             @click="addToCart(product)"
           >Add to Cart</button>
-          <button class="btn mr-3 bg-green-500 text-gray-100 hover:shadow-2xl">Buy now</button>
+          <button
+            class="btn mr-3 bg-green-500 text-gray-100 hover:shadow-2xl"
+            @click="buyNow(product)"
+          >Buy now</button>
           <button
             class="mr-3 hover rounded-full py-3 px-4 bg-gray-300 hover:bg-gray-500 hover:shadow-md"
           >
@@ -70,6 +73,11 @@ import { firestore } from "~/firebase.config";
 import common from "~/mixins/common";
 export default {
   mixins: [common],
+  head() {
+    return {
+      title: this.product.name
+    };
+  },
   async asyncData({ params }) {
     const { _id } = params;
     const currentProd = firestore.doc(`products/${_id}`).get();

@@ -45,6 +45,11 @@
 export default {
   middleware: "auth",
   layout: "account",
+  head() {
+    return {
+      title: "My Orders"
+    };
+  },
   data() {
     return {
       currentPage: 1

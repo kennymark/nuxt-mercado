@@ -23,6 +23,11 @@ import { required, minLength, between } from "vuelidate/lib/validators";
 export default {
   middleware: "auth",
   layout: "account",
+  head() {
+    return {
+      title: "Order"
+    };
+  },
   data() {
     return {
       currentPage: 1,
@@ -31,20 +36,6 @@ export default {
         new_password: ""
       }
     };
-  },
-  methods: {
-    updatePassword() {
-      console.log(this.$v);
-    }
-  },
-  validations: {
-    password: {
-      required,
-      minLength: minLength(10)
-    },
-    new_password: {
-      between: between(20, 30)
-    }
   }
 };
 </script>

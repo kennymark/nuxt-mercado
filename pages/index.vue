@@ -36,7 +36,11 @@
 <script>
 export default {
   layout: "homepage",
-  components: {},
+  head() {
+    return {
+      title: "Home"
+    };
+  },
   data() {
     return {
       carousels: [

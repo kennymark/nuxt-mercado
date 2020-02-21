@@ -40,6 +40,11 @@ import { auth } from "../firebase.config";
 
 export default {
   name: "Login",
+  head() {
+    return {
+      title: "Login"
+    };
+  },
   data() {
     return {
       form: {

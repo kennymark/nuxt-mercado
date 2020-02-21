@@ -6,7 +6,12 @@
 import headerSearch from "@/components/ui/header+search";
 export default {
   layout: "admin",
-  components: { headerSearch }
+  components: { headerSearch },
+  head() {
+    return {
+      title: "Categories"
+    };
+  }
 };
 </script>
 
