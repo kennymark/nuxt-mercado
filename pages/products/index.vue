@@ -1,8 +1,16 @@
 <template>
   <div class="container">
-    <div class="flex items-end py-3 px-4">
-      <p class="mr-5">Sort product by</p>
-      <el-select v-model="sortValue" placeholder="Select" class="focus:border-gray-200">
+    <transition name="page">
+      <div v-if="searchQuery" class="p-4">
+        <h3 class="text-3xl font-medium text-gray-800">
+          Results for
+          <span class="text-green-500 font-normal">{{searchQuery.search}}...</span>
+        </h3>
+      </div>
+    </transition>
+
+    <div class="flex items-center py-3 px-4">
+      <el-select v-model="sortValue" placeholder="Sort product by" class="focus:border-gray-200">
         <el-option
           v-for="item in options"
           :key="item.value"
@@ -31,24 +39,30 @@ export default {
     const db = firestore.collection("products");
     // db.get().then(data => (this.rows = +data.size));
     const snap = await db.get();
-
     return {
       products: snap.docs.map(doc => {
         return { id: doc.id, ...doc.data() };
       })
     };
   },
+
   watch: {
-    $route(val) {
-      console.log(val.query);
+    $route(route) {
+      // const db = firestore.collection("products");
+      this.searchQuery = route.query;
     }
   },
+
   mounted() {
-    // this.$store.commit("product/setAllProducts", this.products);
+    // if (this.$route.query.search) {
+    //   this.searchQuery = this.$route.query.search;
+    // }
   },
+
   data() {
     return {
       sortValue: "",
+      searchQuery: "",
       options: [
         { label: "Cheapest", value: "cheapest" },
         { label: "Most Expensive", value: "most_expensive" },

@@ -10,7 +10,8 @@ export default {
     }
   },
   head: {
-    title: 'Mercado' || '',
+    title: 'Mercado',
+    titleTemplate: '%s - Nuxt Mercado',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },

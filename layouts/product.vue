@@ -40,8 +40,6 @@ export default {
   data() {
     return {
       items: [
-        { title: "all", route: "products" },
-
         { title: "shoes", route: "products" },
         { title: "jackets", route: "categories" },
         { title: "pants", route: "categories" },

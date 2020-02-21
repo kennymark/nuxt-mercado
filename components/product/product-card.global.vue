@@ -1,18 +1,17 @@
 <template>
-  <div class="product mb-3">
+  <div class="product mb-3" v-if="product">
     <div
       class="bg-white cursor-pointer mb-1 hover:shadow-lg border border-gray-200 flex flex-col prodImg"
       style="height:380px"
       @click="viewProduct(product)"
     >
       <img
-        v-if="product.imageurls"
         :src="product.imageurls.split(',')[0] || 'https://picsum.photos/600/300/?image=25'"
         alt
         class="h-full object-contain"
       />
       <button
-        class="uppercase bg-gray-800 tracking-widest p-2 text-gray-100 cartBtn hover:bg-gray-700 transition duration-200"
+        class="uppercase bg-gray-800 tracking-widest p-2 text-gray-100 cartBtn hover:bg-gray-700 transition duration-200 focus:outline-none focus:text-green-500"
         @click.stop="addToCart(product)"
       >Add to cart</button>
     </div>

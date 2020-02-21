@@ -1,6 +1,8 @@
 <template>
   <div>
-    <nav class="sm:flex p-5 justify-between text-lg items-center nav xl:h-20">
+    <nav
+      class="sm:flex p-5 justify-between text-lg items-center nav xl:h-20 border-b border-gray-100"
+    >
       <button class="btn flex items-center sm:hidden" @click="hideMenu">
         <i class="el-icon-menu mr-2 align-bottom text-lg text-gray-700" />Menu
       </button>

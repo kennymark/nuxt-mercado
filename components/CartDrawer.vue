@@ -5,22 +5,20 @@
         class="right-0 fixed overflow-scroll p-3 shadow-lg xl:w-2/6 w-full bg-white h-full"
         @click.stop
       >
-        <div class="flex flex-col px-3 items-center sm:flex-col lg:mb-5 sm:mb-2">
-          <h1 class="text-3xl text-gray-800">Shopping Cart</h1>
+        <div class="px-3 items-center sm:flex-col lg:mb-5 sm:mb-2">
+          <div class="flex flex-row justify-between">
+            <h1 class="text-3xl text-gray-800">Shopping Cart</h1>
+            <button class="px-3 text-black text-3xl focus:outline-none" @click="handleClose">
+              <i class="el-icon-close" />
+            </button>
+          </div>
+
           <div class="buttons">
             <button class="mr-3 btn bg-green-500 text-gray-100" @click="checkout">Checkout</button>
 
             <button class="btn mr-3" @click="resetCart">
               Empty Cart
               <i class="el-icon-refresh"></i>
-            </button>
-
-            <button
-              class="mr-3 btn bg-gray-800 hover:bg-gray-900 text-gray-200"
-              @click="handleClose"
-            >
-              Close
-              <i class="el-icon-close text-white" />
             </button>
           </div>
         </div>
