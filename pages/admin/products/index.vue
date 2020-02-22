@@ -6,19 +6,42 @@
       @click="createNewProduct"
     >Create product</button>
     <el-table
-      :data="tableData"
-      highlight-current-row
+      :data="products"
       @current-change="rowClicked"
       class="mt-10 shadow-lg rounded-lg border border-gray-200 w-full"
     >
-      <el-table-column prop="date" label="Date"></el-table-column>
-      <el-table-column prop="name" label="Name"></el-table-column>
-      <el-table-column prop="address" label="Address"></el-table-column>
+      <el-table-column prop="name" label="Name" sortable>
+        <template slot-scope="scope">
+          <span>{{ scope.row.name | truncate(50)}}</span>
+        </template>
+      </el-table-column>
+
+      <el-table-column prop="brand" label="Brand" max-width="200" sortable />
+
+      <el-table-column prop="date" label="Date" sortable>
+        <template slot-scope="scope">
+          <span>{{ new Date(scope.row.dateadded).toLocaleDateString() }}</span>
+        </template>
+      </el-table-column>
+
+      <el-table-column prop="price.max" label="Price" width="100" max-width="100">
+        <template slot-scope="scope">
+          <span>{{ scope.row.price.max | currency('£')}}</span>
+        </template>
+      </el-table-column>
     </el-table>
+    <el-pagination
+      :page-size="20"
+      :pager-count="11"
+      layout="prev, pager, next"
+      :total="products.length"
+      class="my-3"
+    ></el-pagination>
   </header-search>
 </template>
 
 <script>
+import { firestore } from "~/firebase.config";
 export default {
   layout: "admin",
 
@@ -27,36 +50,20 @@ export default {
       title: "Products"
     };
   },
-  data() {
+  async asyncData() {
+    const db = firestore.collection("products");
+    const snap = await db.get();
     return {
-      tableData: [
-        {
-          date: "2016-05-03",
-          name: "Tom",
-          address: "No. 189, Grove St, Los Angeles"
-        },
-        {
-          date: "2016-05-02",
-          name: "Tom",
-          address: "No. 189, Grove St, Los Angeles"
-        },
-        {
-          date: "2016-05-04",
-          name: "Tom",
-          address: "No. 189, Grove St, Los Angeles"
-        },
-        {
-          date: "2016-05-01",
-          name: "Tom",
-          address: "No. 189, Grove St, Los Angeles"
-        }
-      ]
+      products: snap.docs.map(doc => {
+        return { id: doc.id, ...doc.data() };
+      })
     };
   },
+
   methods: {
     rowClicked(val) {
-      console.log(val);
-      this.$router.push(`products/edit-product/${val.name}`);
+      this.$store.commit("product/setAdminCurrentProduct", val);
+      this.$router.push(`products/edit-product/${val.id}`);
     },
     createNewProduct() {
       this.$router.push("products/add-product");

@@ -2,13 +2,13 @@
 export default {
   mode: 'universal',
 
-
   vue: {
     config: {
       productionTip: false,
       devtools: true
     }
   },
+
   head: {
     title: 'Mercado',
     titleTemplate: '%s - Nuxt Mercado',
@@ -20,8 +20,6 @@ export default {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'script', src: 'https://js.stripe.com/v3/' },
-      // { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto' }
-
     ]
   },
   /*
@@ -40,7 +38,8 @@ export default {
     '~/plugins/vue2-filters',
     '~/plugins/vuelidate',
     '~/plugins/element-ui',
-    { src: '~/plugins/vuex-persist', ssr: false }
+    { src: '~/plugins/defaults', mode: 'client' },
+    { src: '~/plugins/vuex-persist', mode: 'client' }
   ],
 
   buildModules: [
@@ -72,6 +71,7 @@ export default {
   purgeCSS: {
     whitelist: ['element', 'el'],
   },
+
   build: {
     extractCSS: true,
     transpile: [/^element-ui/],

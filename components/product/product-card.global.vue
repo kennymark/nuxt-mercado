@@ -17,7 +17,7 @@
     </div>
 
     <div class="flex justify-between">
-      <p class="text-gray-600">{{product.name || 'Blue Sweater' | truncate(25)}}</p>
+      <p class="text-gray-500 tracking-tight">{{product.name | truncate(25)}}</p>
       <p
         class="tracking-wider text-right font-medium"
       >{{product.price.max || priceRandom | currency('£')}}</p>
@@ -46,6 +46,7 @@ export default {
 
 .product > .prodImg .cartBtn {
   display: none;
+  transition: all 0.2s ease-out;
 }
 .product:hover .cartBtn {
   display: block;

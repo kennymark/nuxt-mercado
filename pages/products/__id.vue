@@ -8,7 +8,7 @@
           style="height:70%"
         />
       </div>
-      <div class="flex flex-col p-3 mx-auto">
+      <div class="block p-3 mx-auto">
         <!-- <p>{{product.imageurls.split(',').length}}</p> -->
         <!-- Amazon product 83 -->
         <h1 class="text-2xl text-black leading-8">{{product.name }}</h1>
@@ -32,8 +32,9 @@
         </div>
 
         <div class="sizes mt-10">
-          <p class="uppercase mb-1 text-sm font-medium tracking-wide text-gray-800">sizes:</p>
-          <el-select v-model="selectedSize" placeholder="Sizes" class="w-full">
+          <h5>Sizes</h5>
+
+          <el-select v-model="selectedSize" placeholder="Pick a size of choice" class="w-full my-2">
             <el-option
               v-for="item in size"
               :key="item.value"
@@ -43,7 +44,7 @@
           </el-select>
         </div>
 
-        <div class="lg:flex lg:flex-row sm:flex-col buttons mt-10 text-lg justify-round">
+        <div class="inline sm:block buttons mt-5 text-lg justify-round">
           <button
             class="btn mr-3 bg-gray-800 text-gray-200 hover:shadow-2xl"
             @click="addToCart(product)"
@@ -61,11 +62,44 @@
       </div>
     </div>
 
-    <div class="flex flex-col lg:my-20 sm:my-10 p-3">
+    <div class="block lg:my-10 p-3">
+      <h1 class="text-base">Features</h1>
+
+      <div class>
+        <p
+          v-for="(feature,value) in product.features"
+          :key="value"
+          class="text-gray-600 mt-2 text-sm"
+        >
+          <span v-if="feature" class="font-weight-bold">{{ feature.key }}:</span>
+          <span class="ml-1">{{ feature.value[0] }}</span>
+        </p>
+        <p
+          v-if="!product.features"
+          class="mt-4 text-gray-600 text-sm"
+        >No features provided available</p>
+      </div>
+    </div>
+
+    <div class="block lg:my-20 sm:my-10 p-3">
       <h1 class="text-2xl text-black uppercase">Related products</h1>
 
       <div class="lg:grid sm:grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 lg:gap-4 sm:gap-2">
         <!-- <product-card v-for="(item,key) in 4" :key="key" /> -->
+        <div class="bg-gray-300 h-64 mt-4" v-for="(item,key) in 4" :key="key" />
+      </div>
+    </div>
+
+    <div class="block p-3 mb-10">
+      <h4>Reviews</h4>
+      <p v-if="!product.reviews" class="mt-4">No reviews</p>
+
+      <div v-for="(review,key) in product.reviews" :key="key" class="my-3 rounded py-3">
+        <h6 class="font-weight-bold text-sm flex sm:justify-between">
+          {{ review.username }} - {{ review.title }}
+          <p class="text-gray-600">{{ new Date(review.date).toDateString() }}</p>
+        </h6>
+        <p class="my-3 text-gray-600 text-sm">{{ review.text }}</p>
       </div>
     </div>
   </div>

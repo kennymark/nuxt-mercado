@@ -23,18 +23,28 @@
       </div>
 
       <div
-        class="rounded-lg border shadow lg:w-1/3 p-3 lg:ml-6 lg:mt-0 sm:mt-4 flex h-auto flex-col sm:w-full"
+        class="rounded-lg border shadow lg:w-1/3 p-3 lg:ml-6 lg:mt-0 sm:mt-4 flex h-auto flex-col sm:w-full p-5"
         style="max-height:300px"
       >
         <h2 class="font-medium text-2xl mb-3 text-gray-700 text-center">Order Summary</h2>
 
-        <div>
-          <h3 class="mt-2 text-xl">
+        <div class="mx-auto text-gray-700 w-full">
+          <h3 class="mt-2 flex justify-between">
             Order Total
-            <span>{{$store.getters["product/totalPrice"] | currency('£')}}</span>
+            <p>{{$store.getters["product/totalPrice"] | currency('£')}}</p>
           </h3>
-          <h3 class="text-xl">
-            Order Shipping
+          <h3 class="flex justify-between">
+            Shipping
+            <span>0</span>
+          </h3>
+
+          <h3 class="flex justify-between">
+            Taxes
+            <span>0</span>
+          </h3>
+
+          <h3 class="flex justify-between">
+            Discount
             <span>0</span>
           </h3>
         </div>

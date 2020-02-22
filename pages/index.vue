@@ -16,7 +16,8 @@
       <h1 class="text-bold uppercase text-2xl text-black">new</h1>
 
       <div class="lg:grid sm:grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-2 lg:gap-4 sm:gap-2">
-        <product-card v-for="(item,key) in 4" :key="key" />
+        <!-- <product-card v-for="(item,key) in 4" :key="key" /> -->
+        <div class="bg-gray-300 h-64 mt-4" v-for="(item,key) in 4" :key="key" />
       </div>
 
       <h1 class="text-bold uppercase text-2xl text-black mt-10">launching</h1>

@@ -1,14 +1,14 @@
 <template>
-  <div class="border-b mb-3 flex flex-row p-2 items-start" :key="product.id">
+  <div class="border-b border-gray-200 mb-3 flex flex-row p-2 items-start" :key="product.id">
     <img :src="product.imageurls.split(',')[0]" class="h-24 w-24" />
 
     <div class="block justify-between ml-6 lg:ml-10 w-full">
       <div class="flex flex-row justify-between">
-        <p class="text-gray-600">{{product.name | truncate(30) }}</p>
+        <p class="text-gray-600 text-sm">{{product.name | truncate(35) }}</p>
 
         <button
           @click="removeFromCart(product)"
-          class="text-sm btn py-1 px-2 hover:bg-red-600 hover:text-gray-300"
+          class="text-sm btn py-1 px-2 hover:bg-gray-500 hover:text-gray-300 text-gray-600"
         >
           Delete
           <i class="el-icon-delete" />
@@ -20,13 +20,13 @@
           <button class="focus:outline-none text-gray-600" @click="addToCart(product)">
             <i class="el-icon-plus" />
           </button>
-          <button class="focus:outline-none w-12 my-2">{{product.quantity}}</button>
+          <button
+            class="focus:outline-none w-12 my-2 text-gray-600 font-medium"
+          >{{product.quantity}}</button>
           <button class="focus:outline-none text-gray-600" @click="decrementQuantity(product)">
             <i class="el-icon-minus" />
           </button>
-          <span
-            class="text-gray-700 font-medium ml-4"
-          >{{product.price.max * product.quantity| currency('£')}}</span>
+          <span class="text-green-300 ml-4">{{product.price.max * product.quantity| currency('£')}}</span>
         </div>
       </div>
     </div>

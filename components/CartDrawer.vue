@@ -9,7 +9,7 @@
           <div class="flex flex-row justify-between">
             <h1 class="text-3xl text-gray-800">Shopping Cart</h1>
             <div class="buttons flex items-center">
-              <button class="mr-3 btn bg-yellow-400 font-medium" @click="checkout">Checkout</button>
+              <button class="mr-3 btn bg-gray-300 font-medium" @click="checkout">Checkout</button>
               <button class="px-3 text-black text-3xl focus:outline-none" @click="handleClose">
                 <i class="el-icon-close" />
               </button>

@@ -1,14 +1,40 @@
 <template>
   <div class="sm:flex lg:flex-row sm:flex-col">
-    <div class="lg:w-2/3 mx-2 sm:w-full mx-auto xs:w-full">
-      <h1 class="text-2xl text-black font-bold mb-3 sm:pt-10 ml-3">Overview</h1>
+    <div class="lg:w-2/3 mx-2 sm:w-full mx-auto xs:w-full p-3">
+      <h1 class="text-2xl text-black font-bold mb-3 sm:pt-10">Overview</h1>
 
-      <div class="grid xl:grid-cols-3 lg:grid-row-2 sm:grid-row-2 lg:gap-4 sm:gap-2 lg:py-2 p-2">
-        <stat-card :data="{title:'Sales', description:'Earnings Monthly', text:20999}" />
+      <div class="xl:flex xl:flex-row sm:flex-col">
+        <stat-card
+          :data="{title:'Sales', description:'Earnings Monthly', text:20999}"
+          class="lg:mr-3"
+        />
 
-        <stat-card :data="{title:'Products Sold', description:'Orders this month', text:328}" />
+        <stat-card
+          :data="{title:'Products Sold', description:'Orders this month', text:328}"
+          class="lg:mr-3"
+        />
 
         <stat-card :data="{title:'Net Profit', description:'Profit this month', text:7640}" />
+      </div>
+      <div
+        class="chart flex justify-center flex-col rounded-lg shadow-lg border border-gray-200 p-3"
+      >
+        <el-radio-group v-model="selectedTimePeriod" size="small" class="mx-auto">
+          <el-radio-button label="1 month" value="1m" />
+          <el-radio-button label="3 month" value="3m" />
+          <el-radio-button label="6 month" value="6m" />
+          <el-radio-button label="1 year" value="1y" />
+        </el-radio-group>
+
+        <vue-frappe
+          id="my-chart-id"
+          type="line"
+          :labels="['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']"
+          :height="350"
+          :colors="['#008F68', '#FAE042']"
+          :line-options="{regionFill: 1, heatline:1, hideDots: 1}"
+          :data-sets="[{name: 'Sales', values: benedictsWeight2017}]"
+        />
       </div>
     </div>
 
@@ -22,7 +48,7 @@
         :key="key"
         class="border border-gray-100 p-4 mb-3 shadow-sm rounded-lg bg-white"
       >
-        <p>Order with total £{{number}} placed</p>
+        <p class="text-gray-800">Order with total £{{number}} placed</p>
         <p class="text-gray-600">2 days ago</p>
       </div>
     </div>
@@ -31,6 +57,7 @@
 
 <script>
 import StatCard from "@/components/ui/stat-card.vue";
+
 export default {
   layout: "admin",
   components: { StatCard },
@@ -46,7 +73,22 @@ export default {
   },
   data() {
     return {
-      data: new Array(10)
+      data: new Array(10),
+      selectedTimePeriod: "1 month",
+      benedictsWeight2017: [
+        480,
+        485,
+        491,
+        489,
+        485,
+        490,
+        497,
+        510,
+        512,
+        521,
+        530,
+        545
+      ]
     };
   }
 };
