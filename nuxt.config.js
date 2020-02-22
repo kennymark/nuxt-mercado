@@ -30,7 +30,6 @@ export default {
   },
 
   css: [
-    'element-ui/lib/theme-chalk/index.css',
     './assets/css/main.css',
   ],
 
@@ -69,7 +68,7 @@ export default {
   axios: {
   },
   purgeCSS: {
-    whitelist: ['element', 'el'],
+    whitelist: [/element/, /el/],
   },
 
   build: {
