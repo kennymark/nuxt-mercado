@@ -24,14 +24,20 @@
 
       <div
         class="rounded-lg border shadow lg:w-1/3 p-3 lg:ml-6 lg:mt-0 sm:mt-4 flex h-auto flex-col sm:w-full"
-        style="max-height:500px"
+        style="max-height:300px"
       >
-        <h2 class="font-medium text-2xl mb-3 text-gray-700 text-center">Your Order</h2>
-        <div class="products h-20 border rounded-lg mb-2 bg-gray-100" v-for="item in 4" :key="item"></div>
-        <h2 class="font-medium mt-3 text-xl">
-          Total
-          <span class="font-thin">£736</span>
-        </h2>
+        <h2 class="font-medium text-2xl mb-3 text-gray-700 text-center">Order Summary</h2>
+
+        <div>
+          <h3 class="mt-2 text-xl">
+            Order Total
+            <span>{{$store.getters["product/totalPrice"] | currency('£')}}</span>
+          </h3>
+          <h3 class="text-xl">
+            Order Shipping
+            <span>0</span>
+          </h3>
+        </div>
       </div>
     </div>
   </div>
@@ -41,7 +47,6 @@
 import Address from "~/components/checkout/address.vue";
 import Payment from "~/components/checkout/payment.vue";
 import Confirm from "~/components/checkout/confirm.vue";
-
 export default {
   head() {
     return {
@@ -53,6 +58,8 @@ export default {
     Payment,
     Confirm
   },
+
+  asyncData({ store }) {},
   watch: {
     active(val) {
       if (val == 3) {
@@ -60,6 +67,7 @@ export default {
       }
     }
   },
+
   data() {
     return {
       active: 0

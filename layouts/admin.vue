@@ -38,6 +38,8 @@ export default {
         { title: "Overview", icon: "el-icon-s-data", route: "" },
         { title: "Products", icon: "el-icon-folder-add", route: "products" },
         { title: "Categories", icon: "el-icon-s-grid", route: "categories" },
+        { title: "Customers", icon: "el-icon-s-custom", route: "customers" },
+        { title: "Orders", icon: "el-icon-sold-out", route: "orders" },
         { title: "Discounts", icon: "el-icon-discount", route: "discounts" },
         {
           title: "Promotions",
@@ -45,8 +47,6 @@ export default {
           route: "promotions"
         },
 
-        { title: "Customers", icon: "el-icon-s-custom", route: "customers" },
-        { title: "Orders", icon: "el-icon-sold-out", route: "orders" },
         {
           title: "Configuration",
           icon: "el-icon-s-tools",

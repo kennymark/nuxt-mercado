@@ -1,5 +1,5 @@
 <template>
-  <headerSearch title="products">
+  <header-search title="products">
     <button
       class="btn bg-gray-800 text-gray-300 shadow-sm border-0"
       slot="button"
@@ -15,14 +15,13 @@
       <el-table-column prop="name" label="Name"></el-table-column>
       <el-table-column prop="address" label="Address"></el-table-column>
     </el-table>
-  </headerSearch>
+  </header-search>
 </template>
 
 <script>
-import headerSearch from "@/components/ui/header+search";
 export default {
   layout: "admin",
-  components: { headerSearch },
+
   head() {
     return {
       title: "Products"

@@ -1,12 +1,10 @@
 <template>
-  <headerSearch title="categories" />
+  <header-search title="categories" />
 </template>
 
 <script>
-import headerSearch from "@/components/ui/header+search";
 export default {
   layout: "admin",
-  components: { headerSearch },
   head() {
     return {
       title: "Categories"

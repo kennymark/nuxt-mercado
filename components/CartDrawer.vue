@@ -8,23 +8,21 @@
         <div class="px-3 items-center sm:flex-col lg:mb-5 sm:mb-2">
           <div class="flex flex-row justify-between">
             <h1 class="text-3xl text-gray-800">Shopping Cart</h1>
-            <button class="px-3 text-black text-3xl focus:outline-none" @click="handleClose">
-              <i class="el-icon-close" />
-            </button>
-          </div>
-
-          <div class="buttons">
-            <button class="mr-3 btn bg-green-500 text-gray-100" @click="checkout">Checkout</button>
-
-            <button class="btn mr-3" @click="resetCart">
-              Empty Cart
-              <i class="el-icon-refresh"></i>
-            </button>
+            <div class="buttons flex items-center">
+              <button class="mr-3 btn bg-yellow-400 font-medium" @click="checkout">Checkout</button>
+              <button class="px-3 text-black text-3xl focus:outline-none" @click="handleClose">
+                <i class="el-icon-close" />
+              </button>
+            </div>
           </div>
         </div>
-        <!-- <cart-product v-for="product in 4" :length="cart.length" :key="product" /> -->
 
-        <div v-for="prod in 20" class="border border-gray-200 h-24 mb-3 rounded-lg" :key="prod"></div>
+        <cart-product v-for="product in cart" :key="product.id" :product="product" />
+
+        <button class="btn bg-gray-800 text-gray-200" @click="resetCart" v-if="cart.length > 1">
+          Empty Cart
+          <i class="el-icon-refresh"></i>
+        </button>
         <!-- 
         <img v-if="!cart.length" :src="emptyCart" alt class="mt-5" />
         <h5
@@ -37,12 +35,12 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState, mapMutations } from "vuex";
 import common from "~/mixins/common";
 export default {
   mixins: [common],
   computed: {
-    ...mapState({ cart: "product/cart" })
+    ...mapState({ cart: state => state.product.cart })
   }
 };
 </script>
@@ -67,19 +65,4 @@ export default {
 .slide-leave-to {
   transform: translate(100%, 0);
 }
-/* 
-@keyframes slide-in {
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
-@keyframes slide-out {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(100%);
-  }
-} */
 </style>

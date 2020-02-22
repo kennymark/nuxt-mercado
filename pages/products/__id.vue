@@ -11,8 +11,11 @@
       <div class="flex flex-col p-3 mx-auto">
         <!-- <p>{{product.imageurls.split(',').length}}</p> -->
         <!-- Amazon product 83 -->
-        <h1 class="text-3xl uppercase text-black">{{product.name | truncate(25)}}</h1>
-        <div class="text-xl text-gray-700">Price {{product.price.max | currency('£')}}</div>
+        <h1 class="text-2xl text-black leading-8">{{product.name }}</h1>
+        <div class="text-xl text-gray-700 mt-5">
+          Price
+          <span class="font-medium text-2xl text-black">{{product.price.max | currency('£')}}</span>
+        </div>
 
         <div class="mt-5" v-if="product.descriptions[0]">
           <h5>Description</h5>
@@ -106,7 +109,9 @@ export default {
         ? (this.descriptionLength = Infinity)
         : (this.descriptionLength = 400);
     },
-    buyNow(product) {},
+    buyNow(product) {
+      this.$router.push("/checkout");
+    },
 
     viewProduct(product) {}
   }

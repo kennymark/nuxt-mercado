@@ -1,4 +1,6 @@
-<template></template>
+<template>
+  <header-search title="discount"></header-search>
+</template>
 
 <script>
 export default {
