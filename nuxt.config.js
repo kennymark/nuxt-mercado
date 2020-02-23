@@ -74,6 +74,9 @@ export default {
   build: {
     extractCSS: true,
     transpile: [/^element-ui/],
+    cssSourceMap: true,
+    css: ({ isDev }) => isDev ? '[name].css' : '[name].css',
+
     /*
     ** You can extend webpack config here
     */
