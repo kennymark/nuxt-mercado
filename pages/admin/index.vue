@@ -36,10 +36,30 @@
           :data-sets="[{name: 'Sales', values: benedictsWeight2017}]"
         />
       </div>
+
+      <div>
+        <h2 class="text-2xl text-black mb-3 text-left mt-4">Top Products</h2>
+        <div class="grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-2 gap-3">
+          <div
+            v-for="(item,key) in 6"
+            :key="key"
+            class="border border-gray-200 p-5 rounded-lg cursor-pointer hover:shadow-lg flex items-center"
+          >
+            <div class="bg-gray-400 rounded-full mr-3 h-20 w-20">
+              <img src alt />
+            </div>
+
+            <div>
+              <p class="text-gray-600">Nike AirMax</p>
+              <p class="text-gray-700">£268</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div
-      class="lg:w-1/3 sm:w-full sm:mt-5 p-6 overflow-y-scroll md:rounded-lg bg-gray-400 lg:ml-8"
+      class="lg:w-1/3 sm:w-full sm:mt-5 p-6 overflow-y-scroll md:rounded-lg bg-gray-300 lg:ml-8"
       style="max-height:900px "
     >
       <h1 class="text-2xl text-black mb-3 text-center">Activity</h1>

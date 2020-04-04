@@ -16,16 +16,8 @@
       </div>
 
       <transition name="page">
-        <input
-          type="text"
-          class="py-3 px-5 bg-gray-200 focus:outline-none border focus:border-gray-200 xl:w-2/6 sm:w-full text-base rounded-lg focus:bg-white tracking-tight mr-3 my-0 sm:my-4 lg:my-0 focus:shadow-xl duration-200"
-          ref="searchbox"
-          placeholder="Search for products here..."
-          v-if="showSearch"
-        />
+        <global-search v-if="showSearch"></global-search>
       </transition>
-
-      <!-- $refs.searchbox.focus();  -->
 
       <div class="right flex-row sm:flex-col mt-1" :class="{'sm:hidden': menuOpen}">
         <nuxt-link
@@ -70,10 +62,11 @@
 <script>
 import Search from "~/components/ui/global-search.vue";
 import CartDrawer from "~/components/CartDrawer.vue";
+import GlobalSearch from "~/components/ui/global-search.vue";
 import { mapGetters } from "vuex";
 
 export default {
-  components: { Search, CartDrawer },
+  components: { Search, CartDrawer, GlobalSearch },
   data() {
     return {
       drawer: false,

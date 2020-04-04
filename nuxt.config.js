@@ -1,7 +1,9 @@
 
 export default {
   mode: 'universal',
-
+  server: {
+    port: 4500, // default: 3000
+  },
   vue: {
     config: {
       productionTip: false,
@@ -22,21 +24,22 @@ export default {
       { rel: 'script', src: 'https://js.stripe.com/v3/' },
     ]
   },
-  /*
-  ** Customize the progress-bar color
-  */
+
   loading: {
-    color: '#68d391', height: '5px', continuous: true
+    color: '#68d391',
+    height: '5px',
+    continuous: true
   },
 
   css: [
     './assets/css/main.css',
+    'element-ui/lib/theme-chalk/index.css'
   ],
 
   plugins: [
     '~/plugins/vue2-filters',
     '~/plugins/vuelidate',
-    '~/plugins/element-ui',
+    { src: '~/plugins/element-ui', mode: 'client' },
     { src: '~/plugins/defaults', mode: 'client' },
     { src: '~/plugins/vuex-persist', mode: 'client' }
   ],
@@ -68,9 +71,13 @@ export default {
   axios: {
   },
   purgeCSS: {
+    enabled: false,
     whitelist: [/element/, /el/],
   },
 
+  styleResources: {
+    scss: []
+  },
   build: {
     extractCSS: true,
     transpile: [/^element-ui/],

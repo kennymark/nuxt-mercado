@@ -50,14 +50,14 @@
           <div>
             <div class="flex items-center justify-between m-0">
               <label for="Price" class="label">Variants</label>
-              <button class="btn py-2 px-2">+</button>
+              <button class="btn p-2 w-10 rounded-full">+</button>
             </div>
 
             <div class="mt-4">
               <button
                 v-for="item in size"
                 :key="item.value"
-                class="px-5 py-1 rounded-lg bg-green-200 btn mr-4 border-0"
+                class="px-5 py-1 rounded bg-green-200 btn mr-2 border-0 text-green-700 text-sm"
               >{{item.label}}</button>
             </div>
           </div>
@@ -91,8 +91,8 @@
       </div>
     </div>
     <div class="h-30 bg-green-200 fixed bottom-0 w-full p-4 mt-10">
-      <button class="btn-account" @click="updateProduct">Save</button>
-      <button class="btn-account bg-red-500" @click="updateProduct">Delete</button>
+      <button class="btn-account py-2" @click="updateProduct">Save</button>
+      <button class="btn-account bg-red-500 py-2" @click="updateProduct">Delete</button>
     </div>
   </div>
 </template>
@@ -108,7 +108,7 @@ export default {
 
   computed: {
     product() {
-      return this.$store.state.product.adminCurrentProduct;
+      return this.$store.state.admin.currentProduct;
     }
   },
 
@@ -119,6 +119,7 @@ export default {
         is_live: true,
         description: ""
       },
+      productCopy: this.product,
       size: [
         { label: "Small", value: "small" },
         { label: "Medium", value: "medium" },

@@ -5,10 +5,8 @@
     <div class="bg-white p-3 rounded-lg shadow-md">
       <h2 class="text-center text-3xl text-gray-700">Welcome to your account</h2>
 
-      <div class="flex flex-wrap mb-2 m-3">
-        <button
-          class="bg-gray-800 rounded-md mt-10 p-3 border hover:shadow-xl text-gray-200 text-base tracking-wider mr-4 hover:bg-gray-900"
-        >Back</button>
+      <div class="flex flex-wrap mb-2 m-3 mx-auto">
+        <button class="btn-account">Back</button>
       </div>
     </div>
   </div>
@@ -22,7 +20,7 @@ export default {
   layout: "account",
   head() {
     return {
-      title: "My Returns"
+      title: "My Account"
     };
   },
   data() {

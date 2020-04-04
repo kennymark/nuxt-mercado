@@ -50,6 +50,7 @@ export default {
       title: "Products"
     };
   },
+
   async asyncData() {
     const db = firestore.collection("products");
     const snap = await db.get();
@@ -62,7 +63,7 @@ export default {
 
   methods: {
     rowClicked(val) {
-      this.$store.commit("product/setAdminCurrentProduct", val);
+      this.$store.commit("admin/setCurrentProduct", val);
       this.$router.push(`products/edit-product/${val.id}`);
     },
     createNewProduct() {

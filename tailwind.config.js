@@ -10,6 +10,12 @@ module.exports = {
       center: true,
       padding: '.75rem'
     },
+    extend: {
+      height: {
+        '72': '30rem'
+      }
+    }
+
 
   },
   variants: {},

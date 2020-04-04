@@ -1,7 +1,11 @@
 <template>
-  <div class="container mt-6">
-    <h1 class="title">Promotions</h1>
-  </div>
+  <headerSearch title="Promotion">
+    <button
+      class="btn bg-gray-800 text-gray-300 shadow-sm border-0"
+      slot="button"
+      @click="createNewPromotion"
+    >Create Promotion</button>
+  </headerSearch>
 </template>
 
 <script>
@@ -11,6 +15,9 @@ export default {
     return {
       title: "Promotions"
     };
+  },
+  methods: {
+    createNewPromotion() {}
   }
 };
 </script>

@@ -8,7 +8,7 @@
 
         <button
           @click="removeFromCart(product)"
-          class="text-sm btn py-1 px-2 hover:bg-gray-500 hover:text-gray-300 text-gray-600"
+          class="text-sm btn py-1 px-2 hover:bg-gray-800 hover:text-gray-400 text-gray-600"
         >
           Delete
           <i class="el-icon-delete" />
@@ -26,7 +26,7 @@
           <button class="focus:outline-none text-gray-600" @click="decrementQuantity(product)">
             <i class="el-icon-minus" />
           </button>
-          <span class="text-green-300 ml-4">{{product.price.max * product.quantity| currency('£')}}</span>
+          <span class="text-green-400 ml-4">{{product.price.max * product.quantity| currency('£')}}</span>
         </div>
       </div>
     </div>

@@ -1,6 +1,6 @@
 <template>
   <div class="container mt-6">
-    <h1 class="title">Config</h1>
+    <h1 class="title">Configuration</h1>
   </div>
 </template>
 
