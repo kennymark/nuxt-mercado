@@ -40,7 +40,7 @@ export default {
     };
   },
   async asyncData() {
-    const db = firestore.collection("products");
+    const db = firestore.collection("products").limit(20);
     // db.get().then(data => (this.rows = +data.size));
     const snap = await db.get();
     return {

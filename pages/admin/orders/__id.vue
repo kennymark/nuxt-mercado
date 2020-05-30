@@ -1,5 +1,5 @@
 <template>
-  <div class>
+  <div class v-if="order">
     <h1 class="title">
       Order
       <span class="font-normal text-green-500">{{order.id}}</span>

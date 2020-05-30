@@ -5,6 +5,7 @@
       slot="button"
       @click="createNewProduct"
     >Create product</button>
+
     <el-table
       :data="products"
       @current-change="rowClicked"
@@ -52,7 +53,7 @@ export default {
   },
 
   async asyncData() {
-    const db = firestore.collection("products");
+    const db = firestore.collection("products").limit(10);
     const snap = await db.get();
     return {
       products: snap.docs.map(doc => {

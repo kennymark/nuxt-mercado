@@ -2,8 +2,9 @@
 export default {
   mode: 'universal',
   server: {
-    port: 4500, // default: 3000
+    port: 4500,
   },
+
   vue: {
     config: {
       productionTip: false,
@@ -59,6 +60,7 @@ export default {
     'nuxt-webfontloader',
   ],
 
+
   webfontloader: {
     google: {
       families: ['Rubik:400,500,700&display=swap']
@@ -72,24 +74,9 @@ export default {
   },
   purgeCSS: {
     enabled: false,
-    whitelist: [/element/, /el/],
+    whitelistPatterns: [/^el-/],
   },
 
-  styleResources: {
-    scss: []
-  },
-  build: {
-    extractCSS: true,
-    transpile: [/^element-ui/],
-    cssSourceMap: true,
-    css: ({ isDev }) => isDev ? '[name].css' : '[name].css',
-
-    /*
-    ** You can extend webpack config here
-    */
-    extend(config, ctx) {
-    }
-  },
 
   router: {
     linkExactActiveClass: 'text-green-500'

@@ -40,8 +40,8 @@ export default {
 
 <style>
 .product:hover {
-  transition: all 0.2s ease-out;
-  transform: scale(1.03);
+  transition: all 0.1s ease-out;
+  transform: scale(1.01);
 }
 
 .product > .prodImg .cartBtn {

@@ -4,11 +4,14 @@
       class="xl:w-1/5 lg:w-2/5 sm:w-full md:w-full border p-4 lg:min-h-screen sm:h-auto md:h-auto"
     >
       <div class="text-base mb-10 flex flex-row justify-between">
-        <nuxt-link to="/" class="rounded">
-          <button class="btn shadow-sm hover:shadow-lg">
-            <i class="el-icon-arrow-left" />Back
-          </button>
-        </nuxt-link>
+        <button>
+          <n-link to="/">
+            <i class="el-icon-s-home text-2xl" />
+          </n-link>
+        </button>
+        <button class="btn shadow-sm hover:shadow-lg" @click="goBack">
+          <i class="el-icon-arrow-left" />Back
+        </button>
         <button class="btn sm:hidden shadow-sm">Menu</button>
       </div>
 
@@ -54,6 +57,11 @@ export default {
         }
       ]
     };
+  },
+  methods: {
+    goBack() {
+      this.$router.go(-1);
+    }
   }
 };
 </script>
