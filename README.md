@@ -1,10 +1,8 @@
-# nuxt-mercado
-
-> Mercado bueno
 
 
 # Mercado - E-Commerce Shop built with Nuxt
 
+> An e-commerce website that works in-tandem with firebase and firebase functions to pull e-commerce and process payments
 
 ## Build Setup
 
